@@ -1,0 +1,129 @@
+.contact-us {
+  //Hero
+  .hero {
+    @apply bg-primary text-secondary p-4;
+    .wrapper {
+      display: block;
+      margin-inline: auto;
+      @media (width >= 75em) {
+        width: 75rem;
+      }
+    }
+    h1 {
+      @apply text-darkgray;
+      @media (width >= 60em) {
+        @apply pt-6
+      }
+    }
+    span {
+      font-weight: 400;
+      @apply text-secondary italic;
+    }
+    p {
+      @apply pt-4;
+      width: 22rem;
+      @media (width >= 60em) {
+        @apply  py-6;
+      }
+    }
+  }
+  //Message form
+  .message-form {
+    @apply p-4;
+    h2 {
+      font-weight: 400;
+      @apply text-darkgray;
+    }
+    @media (width >= 75em) {
+      @apply p-0;
+    }
+    .wrapper {
+      display: block;
+      margin-inline: auto;
+      @media (width >= 75em) {
+        width: 75rem;
+        @apply py-10;
+      }
+      button {
+        width: 100%;
+
+        @media (width >= 60em) {
+          width:auto;
+        }
+      }
+      form input, form textarea {
+        @apply bg-lightgray border-b-2 border-darkgray;
+      }
+      input::placeholder,
+      textarea::placeholder {
+        color: #000000;
+        opacity: 1;
+      }
+      form input:focus,
+      form textarea:focus {
+        outline: none; /* Remove default outline */
+        border-color: #000000; /* Change border color to desired focus color */
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.8); /* Optional: Add glow effect */
+      }
+
+      // /* Specific focus color for Name input */
+      // form #name:focus {
+      //   border-color: #FF5733; /* Example custom color */
+      // }
+    }
+  }
+  //Visit Us
+  .visit-us {
+    position: relative;
+    @apply bg-primary text-secondary;
+
+    .wrapper {
+      position: relative;
+      @apply grid grid-cols-1 gap-2;
+
+      @media (width >= 40em) {
+        @apply grid grid-cols-2 gap-2;
+      }
+      @media (width >= 75em) {
+        display: block;
+        margin-inline: auto;
+        width: 75rem;
+        height: 37.5rem;
+        @apply grid grid-cols-2 gap-2;
+      }
+
+      &__cont1 {
+        @apply p-4;
+
+        @media (width >=60em) {
+          @apply pt-10;
+        }
+      }
+      &__cont2 {
+        @apply pb-4;
+        iframe {
+         min-height: 18rem;
+         width: 100%;
+
+         @media (width >= 40em) {
+          height: 20rem;
+         }
+         @media (width >= 60em) {
+          height: 24rem;
+         }
+         @media (width >= 75em) {
+          position: absolute;
+          height: 37.5rem;
+          width: 100%;
+         }
+        }
+        @media (width >=40em) {
+          @apply pb-0;
+        }
+      }
+    }
+    p {
+      width: 22rem;
+    }
+  }
+}

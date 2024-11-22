@@ -1,0 +1,152 @@
+body {
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+  @apply bg-secondary;
+  max-width: 100%;
+  overflow-x: hidden; /* Hide scrollbars */
+}
+p, ul {
+  font-family: "Roboto", sans-serif;
+  font-size: 0.875rem;
+  font-size: clamp(0.875rem, 0.7840909090909091rem + 0.45454545454545453vw, 1.125rem);
+  font-weight: 100;
+}
+blockquote, .heading {
+  font-family: Roboto;
+  font-size: 1.375rem;
+  font-size: clamp(1.375rem, 1.3329796264855687rem + 3.0560271646859083vw, 3.625rem);
+  font-style: italic;
+  font-weight: 300;
+  line-height: normal;
+  letter-spacing: -1px;
+}
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Roboto Condensed", sans-serif;
+}
+
+h1 {
+  font-size: 3rem;
+  font-size: clamp(3rem, 1.8181818181818181rem + 5.909090909090909vw, 6.25rem);
+  line-height: 100%;
+  @apply uppercase;
+}
+h2 {
+  font-size: 2rem;
+  font-size: clamp(2rem, 1.0909090909090908rem + 4.545454545454546vw, 4.5rem);
+  font-weight: 500;
+  line-height: normal;
+  @apply uppercase;
+}
+h3 {
+  font-size: 1.25rem;
+  font-size: clamp(1.25rem, 0.75rem + 2.5vw, 2.625rem);
+  font-weight: 400;
+  line-height: 100%;
+}
+h4 {
+  font-size: 1.1875rem;
+  font-size: clamp(1.1875rem, 1.2517123287671232rem + -0.08561643835616438vw, 1.25rem);
+}
+h5 {
+  font-size: 1.125rem;
+  font-size: clamp(1.125rem, 1.2523344651952462rem + -0.1697792869269949vw, 1.25rem);
+  font-weight: 500;
+}
+
+//accordion 1
+.accordion {
+  @apply flex flex-col gap-2;
+  @media (width >= 40em) {
+    @apply gap-3;
+  }
+  @media (width >= 60em) {
+    @apply gap-4;
+  }
+  .accordion-item {
+    transition: transform 0.3s ease-in-out; /* Add transition for smooth movement */
+    .accordion-header {
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+      @apply py-3 pl-5;
+
+      @media (width >= 60em) {
+        @apply py-5 pl-9;
+      }
+      h3 {
+        font-family: "Roboto", sans-serif;
+        font-weight: 300;
+        font-style: italic;
+        @apply uppercase text-secondary flex items-center gap-6;
+        i {
+          font-size: 0.625rem;
+          font-size: clamp(0.625rem, 0.5969864176570459rem + 2.0373514431239386vw, 2.125rem);
+          line-height: 0%;
+        }
+      }
+    }
+    .accordion-content {
+      display: none;  // Hidden by default, toggled by JavaScript
+      @apply py-4 px-14;
+
+      @media (width >= 60em) {
+        @apply py-5 px-16;
+      }
+      @media (width >= 75em) {
+        @apply px-24;
+      }
+
+    }
+  }
+  .accordion-item:hover {
+    @media (width >= 60em){
+      transition: transform 0.3s ease-in-out;
+      transform: translateX(1.75rem);
+    }
+  }
+}
+
+//Accordion 2
+
+.accordion2 {
+  @apply pb-2;
+  @media (width >= 40em) {
+    @apply pb-3;
+  }
+  @media (width >= 60em) {
+    @apply pb-4;
+  }
+  .accordion-item2 {
+    transition: transform 0.3s ease-in-out; /* Add transition for smooth movement */
+    .accordion-header2 {
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+      @apply py-3 pl-5;
+
+      @media (width >= 60em) {
+        @apply py-5 pl-9;
+      }
+      h3 {
+        font-family: "Roboto", sans-serif;
+        font-weight: 300;
+        font-style: italic;
+        @apply uppercase text-secondary flex items-center gap-6;
+        i {
+          font-size: 0.625rem;
+          font-size: clamp(0.625rem, 0.5969864176570459rem + 2.0373514431239386vw, 2.125rem);
+          line-height: 0%;
+        }
+      }
+    }
+    .accordion-content2 {
+      display: none;  // Hidden by default, toggled by JavaScript
+    }
+  }
+  .accordion-item2:hover {
+    @media (width >= 60em){
+      transition: transform 0.3s ease-in-out;
+    }
+  }
+}
+

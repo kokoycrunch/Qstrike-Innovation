@@ -1,0 +1,141 @@
+.careers {
+  .hero {
+    @apply bg-lightgray;
+    &__cont {
+      h1, p {
+        @apply p-4;
+      }
+      h1 {
+        @apply text-secondary;
+        span {
+          font-weight: 500;
+          background: rgba($color: #FFF, $alpha: 0.3);
+          @apply text-primary italic;
+
+          @media (width >= 60em) {
+            background: none;
+          }
+        }
+      }
+      p {
+          width: 24rem;
+          background: rgba($color: #FFF, $alpha: 0.3);
+          @media (width >= 60em) {
+            width: 31.25rem;
+            background: none;
+          }
+      }
+      @media (width >= 75em) {
+        display: block;
+        margin-inline: auto;
+        max-width: 75rem;
+        height: 39.375rem;
+        padding-top: 3.125rem;
+      }
+    }
+    }
+    .job-list {
+      @apply p-4;
+      .wrapper {
+        @media (width >= 75em) {
+          display: block;
+          margin-inline: auto;
+          width: 75rem;
+        }
+        h2 {
+          @apply text-darkgray text-center pb-4;
+
+          @media (width >= 60em) {
+            @apply py-6;
+
+          }
+          @media (width >= 60em) {
+            @apply py-10;
+
+          }
+        }
+      }
+      .position-list {
+        @apply grid grid-cols-1 gap-2 pt-4 auto-rows-fr auto-cols-fr;
+
+        @media (width >= 40em) {
+          @apply grid-cols-2 gap-4 pt-6;
+        }
+        @media (width >= 60em) {
+          @apply grid-cols-3 gap-6 pt-10;
+        }
+        .job-card {
+          transition: transform 0.2s ease-in-out; /* Smooth transition */
+          h3 {
+            font-family: "Roboto", sans-serif;
+            font-weight: 500;
+            font-size: 1.25rem;
+            font-size: clamp(1.25rem, 1.2383276740237692rem + 0.8488964346349746vw, 1.875rem);
+            line-height: 120%;
+            @apply italic pt-2;
+
+            @media (width >= 60em) {
+            }
+          }
+          p {
+            @apply pb-4;
+          }
+          @apply col-span-1 p-4 bg-lightgray grid gap-6 grid-cols-1 content-between;
+        }
+      }
+      .job-card:hover {
+        transform: scale(1.05);
+      }
+    }
+    //WhyQ Qstrike
+    .why-qstrike {
+      background-image: url("http://qstrikeinov.test/wp-content/uploads/2024/11/bg-logo-white.png");
+      background-repeat: no-repeat;
+      background-position: left;
+      background-size: contain;
+      @apply bg-primary;
+      .wrapper {
+        @apply text-secondary p-4;
+
+        @media (width >= 75em) {
+          display: block;
+          margin-inline: auto;
+          max-width: 75rem;
+          @apply p-0 py-12;
+        }
+        .bullet-icon {
+          font-size: 1rem;
+          font-size: clamp(1rem, 0.9719864176570459rem + 2.0373514431239386vw, 2.5rem);
+        }
+        h2 {
+          font-weight: 400;
+          @apply text-darkgray italic pb-4;
+          span {
+            font-weight: 500;
+            @apply text-secondary;
+          }
+        }
+        ul {
+          @media (width >= 60em) {
+            @apply pt-4 flex flex-col gap-4;
+          }
+        }
+          li {
+            @apply flex gap-4;
+
+            h4 {
+              font-family: "Roboto",sans-serif;
+              font-weight: 500;
+              font-size: 0.875rem;
+              font-size: clamp(0.875rem, 0.8539898132427843rem + 1.5280135823429541vw, 2rem);
+              @apply italic;
+              span {
+                font-weight: 200;
+              }
+            }
+          }
+      }
+    }
+    //Bullets
+  }
+

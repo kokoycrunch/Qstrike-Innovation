@@ -1,0 +1,58 @@
+footer {
+  @apply flex flex-col;
+
+  @media (width > 40em) {
+    @apply pt-10 px-4;
+  }
+  @media (width >= 60em) {
+    @apply px-4;
+  }
+  @media (width >= 75em) {
+    @apply px-0;
+  }
+
+
+  .list {
+    display: block;
+    margin-inline: auto;
+    @apply  grid grid-cols-1;
+
+    @media (width >= 40em) {}
+    ul li {
+      font-size: 1rem;
+    }
+    @media ( width >= 40rem ) {
+      @apply grid-cols-2;
+    }
+    @media ( width >= 75rem ) {
+      @apply w-[75rem] grid-cols-3;
+    }
+    .list-cont {
+      @apply col-span-1 p-4;
+      @media (width >= 40rem ) {
+        @apply py-4 pl-0
+      }
+      .site-logo img{
+        height: 3.125rem;
+        width: auto;
+        @apply pb-2;
+      }
+      .contact-info li {
+        @apply py-4 border-b border-darkgray flex gap-4 items-center;
+        @media (width >= 40rem) {
+          @apply py-6;
+        }
+      }
+      .footer-menu {
+        ul {
+          @apply border-b-2 border-darkgray pb-3;
+        }
+        li {
+        font-family: "Roboto Condensed", sans-serif;
+        @apply py-1 uppercase;
+        }
+      }
+    }
+
+  }
+}

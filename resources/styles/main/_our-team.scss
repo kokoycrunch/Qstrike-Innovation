@@ -1,0 +1,162 @@
+.our-team {
+  .hero{
+
+    &__cont1{
+      position: relative;
+      @apply flex justify-center;
+      div {
+        position: absolute;
+        border-bottom: 3.125rem solid #EEEEEE;
+        border-left: 100vw solid transparent;
+        bottom: 0;
+      }
+      h1 {
+        position: relative;
+        @apply pt-10 pb-20 px-4 text-darkgray w-full;
+
+        @media (width >= 75em){
+          max-width: 75rem;
+          height: 21.875rem;
+          @apply px-0 pt-[8rem];
+        }
+        b {
+          font-weight: 500;
+          @apply text-secondary italic;
+        }
+      }
+    }
+    &__cont2{
+      @apply p-4 flex flex-col gap-4;
+      blockquote b {
+        font-weight: 500;
+      }
+      @media (width >= 75em){
+        display: block;
+        margin-inline: auto;
+        max-width: 75rem;
+        @apply px-0 pt-8;
+        blockquote {
+          @apply py-14
+        }
+      }
+    }
+  }
+  //Core Values
+  .core-values {
+    @apply w-full bg-primary;
+
+    @media (width >= 40em) {
+      @apply py-8;
+    }
+    @media (width >= 75em) {
+      @apply py-24;
+    }
+
+    .wrapper {
+      display: block;
+      margin-inline: auto;
+      @apply grid grid-cols-1 p-4 gap-4;
+      @media (width >= 60em) {
+        @apply grid-cols-2;
+      }
+      @media (width >= 75em) {
+        @apply w-[75rem] p-0;
+        h2 {
+          width: 25rem;
+        }
+      }
+    }
+  }
+  //Qstrike People
+  .qstrike-people {
+    @apply px-4 py-6 bg-lightgray;
+
+    .wrapper {
+      h2 {
+        @apply italic text-secondary;
+        text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        font-weight: 700;
+        line-height: 120%;
+        letter-spacing: -1px;
+      }
+      .subheading {
+        @apply py-4;
+
+        @media (width >= 40em) {
+          @apply py-8 w-[25rem];
+        }
+        @media (width >= 60em) {
+          @apply py-12;
+        }
+        @media (width >= 75em) {
+          @apply py-20;
+        }
+      }
+      @media (width >= 40em) {
+
+      }
+      @media (width >= 60em) {
+
+      }
+      @media (width >= 75em) {
+        display: block;
+        margin-inline: auto;
+        width: 75rem;
+      }
+    }
+
+    @media (width >= 40em) {
+
+    }
+    @media (width >= 60em) {
+
+    }
+    @media (width >= 75em) {
+      @apply p-0 py-[5rem];
+    }
+  }
+// Qstrike-faces
+  .qstrike-faces {
+    &__cont {
+      @apply w-full pt-8 grid grid-cols-3 gap-3;
+
+      @media (width >= 40em) {
+        @apply pt-8 grid grid-cols-4 gap-4;
+      }
+      @media (width >= 60em) {
+        @apply pt-8 grid grid-cols-5 gap-6;
+      }
+    }
+    .employee-card {
+      position: relative;
+      width: auto;
+      height: auto;
+      overflow: hidden;
+    }
+
+    .employee-card img {
+      object-fit: cover;
+      transition: opacity 0.5s ease-in-out; /* Smooth transition when image changes */
+    }
+    /* Optional: add a hover effect to visually indicate interactivity */
+    .employee-card:hover .employee-image {
+      filter: brightness(90%); /* Slight darkening on hover */
+    }
+    .overlay {
+      @apply text-primary pb-2;
+      h4 {
+        @apply text-center uppercase pt-2;
+        font-weight: 400;
+        font-size: 0.75rem;
+        font-size: clamp(0.75rem, 0.7418293718166383rem + 0.5942275042444821vw, 1.1875rem);
+      }
+      p {
+        font-family: "Roboto Condensed", sans-serif;
+        @apply text-center;
+        font-size: 0.625rem;
+        font-size: clamp(0.625rem, 0.6179966044142614rem + 0.5093378607809846vw, 1rem);
+      }
+    }
+
+  }
+}

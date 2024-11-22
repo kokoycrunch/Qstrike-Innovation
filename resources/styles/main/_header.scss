@@ -1,0 +1,112 @@
+
+.topnav {
+  @media (width >= 40em) {
+    @apply px-4;
+  }
+  @media (width >= 75em) {
+    @apply p-0;
+  }
+  img {
+    height: 50px;
+    width: auto;
+  }
+  .navigation-container {
+    @apply flex w-full justify-between ;
+  }
+  &__menu {
+    @media (width < 60em) {
+      position: fixed;
+      z-index: 9999;
+      @apply bg-lightgray !important;
+      inset: 0;
+      translate: 100vw 0;
+      transition: translate 0.5s ease-in-out;
+    }
+  }
+  //button
+  button {
+    @media (width >= 60em ) {
+      display: none;
+    }
+  }
+&__open[aria-expanded='true'] {
+  + .topnav__menu {
+    translate: 0;
+  }
+}
+&__close {
+  display: block;
+  margin-inline-start: auto;
+  @apply py-4 pr-4
+}
+  //nav list
+  ul {
+    @media (width < 60em){
+    @apply flex flex-col;
+    }
+  }
+  ul li {
+    @media (width < 60em){
+      @apply w-full flex justify-center;
+      }
+
+  }
+  nav ul {
+    font-weight: 400;
+    font-size: 0.875rem;
+    font-size: clamp(0.875rem, 0.7840909090909091rem + 0.45454545454545453vw, 1.125rem);
+    @apply flex items-center gap-10 uppercase;
+  }
+  .nav-primary #menu-item-99 a{  // Adjust selector based on actual class or ID
+    background-color: black;
+    color: #EEEEEE;
+    padding: 0.5rem 1rem;
+    transition: background-color 0.3s ease, color 0.3s ease;
+
+    &:hover {
+      @apply bg-darkgray text-secondary;
+    }
+
+  }
+  .navigation-container {
+    @apply flex items-center p-4;
+
+    @media (width >= 40em) {
+      width: 75rem ;
+      @apply pt-6 px-0;
+    }
+  }
+
+}
+//sticky header
+.header-primary {
+  position: sticky;
+  top: 0;
+  z-index: 9998;
+  background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent background */
+  // backdrop-filter: blur(5px); /* Optional: subtle blur effect */
+}
+
+
+//Navigation
+
+/* General styles for navigation links */
+.nav-primary a {
+  color: black; /* Default link color */
+  text-decoration: none; /* Remove underline by default */
+  transition: color 0.3s ease, text-decoration 0.3s ease; /* Smooth transition for hover effects */
+}
+
+/* Hover effect: Change text color to dark gray */
+.nav-primary a:hover {
+  @apply text-lightgray;
+}
+
+/* Active effect: Add underline to the text */
+.nav-primary a:active,
+.nav-primary .current-menu-item > a {
+  text-decoration: underline; /* Underline for active and current page links */
+  @apply text-primary;
+}
+
+

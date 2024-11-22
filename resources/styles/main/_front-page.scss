@@ -1,0 +1,288 @@
+.front-page {
+
+  //Hero
+  .hero {
+    position: relative;
+    background-image: url("http://qstrikeinov.test/wp-content/uploads/2024/10/slider-2.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    @apply flex flex-col justify-center;
+
+
+    .background-video {
+      position: relative;
+
+      video {
+        object-fit: cover;
+        width: 100%;
+        height: 100%; // Full container height
+
+        @media (width >= 75em) {
+          object-fit: contain;
+          object-position: right;
+          max-height: 800px;
+        }
+      }
+    }
+
+    &__cont1 {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: auto; // JavaScript will handle the height
+      @apply grid grid-cols-1;
+
+      @media (min-width: 40em) {
+        @apply grid-cols-2;
+      }
+      @media (min-width: 60em) {
+        @apply grid-cols-2;
+        width: 100%;
+      }
+
+      .cont1 {
+        @apply col-span-1 text-darkgray p-4;
+      }
+
+      .cont2 {
+        position: relative;
+        display: none;
+        border-left: 8rem solid rgba(0, 0, 0, 1.0);
+        border-bottom: 0 solid transparent; // JavaScript will adjust the border
+        @apply col-span-1;
+
+        @media (min-width: 40em) {
+          display: block;
+        }
+      }
+    }
+    .hero-text {
+      position: absolute;
+      margin-left: auto;
+      margin-right: auto;
+      left: 0;
+      right: 0;
+      @apply p-4;
+
+      @media (width >= 75em) {
+        width: 75rem;
+        top: 6.25rem;
+        @apply p-0;
+      }
+
+      h1 {
+        @apply text-darkgray;
+        @media (width >= 40em) {
+          width:40%;
+        }
+        @media (width >= 60em) {
+          width: 30rem;
+        }
+      }
+      span {
+        font-weight: 500;
+        @apply text-secondary italic;
+      }
+      p {
+        @apply pt-4 text-secondary;
+
+        @media (width >= 40em) {
+          width:40%;
+        }
+        @media (width >= 75em) {
+          width:35%;
+          @apply pt-[6.25rem];
+        }
+      }
+    }
+  }
+
+
+//About our company
+  .about {
+      @apply flex justify-center;
+      &__cont {
+      @apply grid grid-cols-1;
+
+      @media (width >= 40em) {
+        @apply grid-cols-2 p-4;
+
+        img {
+          width: 100%;
+          @media (width >= 40em) {
+            height: auto;
+            max-width: 37.5rem;
+          }
+        }
+      }
+      @media (width >= 60em) {
+        width: 75rem;;
+        @apply grid-cols-2 p-4;
+      }
+      @media (width >= 75em) {
+        width: 75rem;;
+        @apply grid-cols-2 p-0;
+      }
+      div {
+        @apply col-span-1 p-4;
+
+        @media (width >= 40em) {
+          @apply p-4;
+        }
+
+        @media (width >= 60em) {
+          @apply py-16 px-0;
+        }
+
+        p {
+          @apply pt-2;
+          @media (width >= 40em) {
+            width: 80%;
+            padding-top: 2rem;
+          }
+        }
+      }
+    }
+
+    }
+
+    //History
+    .history {
+      @apply flex flex-col  text-white bg-primary;
+
+      &__cont1 {
+        @apply p-4;
+        @media (width >= 75em){
+          @apply w-[75rem] pb-[3.125rem];
+          display: block;
+          margin-inline: auto;
+        }
+        h2 {
+          @media (width >= 75em){
+            @apply text-center pt-[3.25rem];
+          }
+        }
+        p{
+          @apply pt-4;
+          @media (width >= 75em){
+            @apply text-center pt-[3.25rem];
+          }
+        }
+      }
+      &__cont2 {
+        @media (width >= 75em){
+          @apply w-[75rem] h-[20rem] bg-lightgray;
+          display: block;
+          margin-inline: auto;
+        }
+      }
+      &__cont3 {
+        @apply px-4 pt-4 pb-8;
+        @media (width >= 75em){
+          @apply flex justify-center pt-[3.125rem];
+        }
+
+        ul {
+          @media (width >= 75em){
+            width: 75rem;
+          }
+        }
+        ul li {
+          @apply border-b border-secondary py-2;
+          @media (width >= 75em){
+            @apply flex py-0 border-b-0 w-[75rem] gap-[6.25rem];
+          }
+        }
+        h3 {
+          @apply pt-2;
+        }
+        p {
+          @apply pt-2;
+          @media (width >= 75em){
+            @apply border-l w-[37.5rem] pl-[6.25rem] pb-[6.25rem];
+          }
+        }
+      }
+    }
+    //mission vision
+    .mission-vision {
+      @apply p-4 flex justify-center;
+      &__cont {
+        @apply w-[75rem] flex flex-col gap-4;
+        @media (width >= 60em){
+          @apply py-[3.125rem] gap-8;
+        }
+        strong {
+          @apply text-primary;
+          font-weight: 600;
+        }
+      }
+    }
+    //Trusted By
+    .trusted-by {
+      @apply flex justify-center p-4 text-secondary bg-primary;
+      &__cont {
+        p {
+          @media (width >= 60em) {
+            @apply py-[3.125rem];
+          }
+        }
+        @media (width >= 75em) {
+          @apply w-[75rem] pb-[3.125rem];
+        }
+      }
+    }
+    //Partner Factories
+    .partner-factories {
+      @apply p-4 bg-primary;
+
+      @media (width >= 40em ) {
+        @apply py-10;
+      }
+      @media (width >= 60em ) {
+        @apply py-[6.25rem];
+      }
+      &__cont {
+        display: block;
+        margin-inline: auto;
+        @apply grid grid-cols-1;
+        @media (width >= 40em) {
+          @apply grid grid-cols-2;
+        }
+        @media (width >= 75em) {
+          max-width: 75rem ;
+          @apply grid grid-cols-2;
+        }
+        .cont1{
+          .heading {
+            @media (width < 40em) {
+              width: auto;
+            }
+            @media (width >= 60em) {
+              width: 25rem;
+            }
+          }
+        }
+        .cont2 {
+          ul {
+            @apply py-6;
+
+            @media (width >= 40em) {
+              @apply py-0;
+            }
+          }
+          ul li{
+            @apply flex items-center border-b text-secondary border-secondary py-2 gap-10 uppercase;
+
+            @media (width >= 40em) {
+              @apply py-4;
+            }
+          }
+          li:hover {
+            @apply bg-secondary text-primary;
+          }
+        }
+      }
+    }
+}

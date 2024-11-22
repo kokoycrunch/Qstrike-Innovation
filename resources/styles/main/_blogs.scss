@@ -1,0 +1,41 @@
+.blogs {
+  .hero {
+    @apply bg-primary text-secondary p-4;
+    .wrapper {
+      display: block;
+      margin-inline: auto;
+      @media (width >= 75em) {
+        width: 75rem;
+      }
+    }
+    h1 {
+      @apply text-darkgray;
+      @media (width >= 60em) {
+        @apply pt-6
+      }
+    }
+    span {
+      font-weight: 400;
+      @apply text-secondary italic;
+    }
+    p {
+      @apply pt-4;
+      width: 22rem;
+      @media (width >= 60em) {
+        @apply  py-6;
+      }
+    }
+  }
+  //Blog list
+  .blog-list {
+    .wrapper {
+      @apply grid grid-cols-1 bg-lightgray;
+      &__cont1{
+        @apply col-span-1 grid grid-cols-4;
+        .img-cont{
+
+        }
+      }
+    }
+  }
+}
