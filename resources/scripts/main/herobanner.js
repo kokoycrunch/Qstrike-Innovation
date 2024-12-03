@@ -19,12 +19,22 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   };
 
-  // Adjust heights after video is loaded
+  // Lazy load the video and adjust heights after it's loaded
   if (video) {
-    video.addEventListener('loadeddata', adjustHeights);
+    const videoSource = video.querySelector('source');
+    if (videoSource && videoSource.hasAttribute('loading')) {
+      videoSource.addEventListener('load', () => {
+        video.load();
+        adjustHeights();
+      });
+    }
+
+    video.addEventListener('loadeddata', adjustHeights); // Fallback in case the lazy loading is quick
   }
 
   // Adjust heights on window resize
   window.addEventListener('resize', adjustHeights);
-});
 
+  // Initial adjustment to set default heights
+  adjustHeights();
+});

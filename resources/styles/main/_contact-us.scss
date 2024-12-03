@@ -44,26 +44,27 @@
         width: 75rem;
         @apply py-10;
       }
-      button {
-        width: 100%;
-
-        @media (width >= 60em) {
-          width:auto;
+      &__form {
+        @apply flex flex-col;
+        .wpcf7-submit {
+          font-weight: 400;
+          width: max-content;
+          @apply py-2 px-12 text-secondary bg-primary border-none uppercase;
         }
-      }
-      form input, form textarea {
-        @apply bg-lightgray border-b-2 border-darkgray;
-      }
-      input::placeholder,
-      textarea::placeholder {
-        color: #000000;
-        opacity: 1;
-      }
-      form input:focus,
-      form textarea:focus {
-        outline: none; /* Remove default outline */
-        border-color: #000000; /* Change border color to desired focus color */
-        box-shadow: 0 0 5px rgba(0, 0, 0, 0.8); /* Optional: Add glow effect */
+        form input, form textarea {
+          @apply bg-lightgray border-b-2 border-darkgray w-full my-2 p-2;
+        }
+        input::placeholder,
+        textarea::placeholder {
+          color: #000000;
+          opacity: 1;
+        }
+        form input:focus,
+        form textarea:focus {
+          outline: none; /* Remove default outline */
+          border-color: #000000; /* Change border color to desired focus color */
+          box-shadow: 0 0 5px rgba(0, 0, 0, 0.8); /* Optional: Add glow effect */
+        }
       }
 
       // /* Specific focus color for Name input */

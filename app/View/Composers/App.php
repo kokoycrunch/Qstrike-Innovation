@@ -41,9 +41,15 @@ class App extends Composer
             'regularPosition' => get_field('regular_position', 'options'),
             'internship' => get_field('internship', 'options'),
             'whyQstrike' => get_field('why_qstrike', 'options'),
+            'error404' => get_field('error_404', 'options'),
+            //Positions
+            'positionTitle' => get_field('title'), // Title field
+            'responsibilities' => get_field('responsibilities'), // Repeater field for Responsibilities
+            'requirements' => get_field('requirements'), // Repeater field for Requirements
+            'location' => get_field('location'), // Location field
+
         ];
     }
-
     /**
      * Returns the site name.
      *

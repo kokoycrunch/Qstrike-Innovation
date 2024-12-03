@@ -1,0 +1,188 @@
+.positions {
+  @apply p-4 bg-lightgray;
+  h3 {
+    font-family: "Roboto", sans-serif;
+    font-weight: 500;
+  }
+  h5 {
+    font-family: "Roboto", sans-serif;
+    font-weight: 500;
+  }
+
+  &__wrapper {
+    button {
+      width: 100%;
+      padding: 0.25rem 1rem 0.25rem 1rem;
+      border-radius: 6.25rem;
+      @apply my-4 text-secondary bg-primary;
+
+      @media (width >= 75rem) {
+        display: none;
+      }
+    }
+    @media ( width >= 75rem) {
+      @apply py-[4.375rem];
+      display: block;
+      margin-inline: auto;
+      width: 75rem;
+    }
+  }
+
+  //Job Title
+  .job-title {
+    display: block;
+    margin-inline: auto;
+    @apply border-b-[1px] border-primary pb-4;
+
+    &__cont {
+      @apply flex flex-col;
+
+      @media (width >= 75rem) {
+        @apply flex flex-row w-full justify-between;
+      }
+      button {
+        display: none;
+        width: max-content;
+        padding: 0.25rem 1rem 0.25rem 1rem;
+        border-radius: 6.25rem;
+        @apply mt-2 text-secondary bg-primary;
+
+        @media (width >= 75rem) {
+          display: inline-block;
+          height: max-content;
+          padding: 0.25rem 3rem 0.25rem 3rem;
+        }
+      }
+      .tag {
+        width: max-content;
+        font-weight: 100;
+        padding: 0.25rem 1rem 0.25rem 1rem;
+        border-radius: 6.25rem;
+        @apply mt-2 border border-primary bg-secondary text-xs;
+      }
+    }
+  }
+  //Job Description
+  .job-description {
+    @apply py-4;
+    ul {
+      @apply pl-6 mt-4 flex flex-col gap-2 list-disc;
+
+      @media (width >= 75rem) {
+        width: 46.875rem;
+      }
+    }
+    ol {
+      @apply pl-6 mt-4 flex flex-col gap-2 list-decimal;
+
+      @media (width >= 75rem) {
+        width: 46.875rem;
+      }
+    }
+  }
+}
+
+//modal
+
+/* Modal container */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999999;
+  overflow-y: auto; /* Enable scrolling if content is taller than the viewport */
+  padding: 1rem; /* Add padding for mobile view to prevent edge cropping */
+}
+
+/* Overlay */
+.modal-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black */
+  z-index: 1;
+}
+
+/* Modal content */
+.modal-content {
+  position: relative;
+  z-index: 2;
+  background: #fff;
+  padding: 2rem;
+  border-radius: 8px;
+  width: 100%;
+  max-width: 500px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  max-height: 90vh; /* Ensure modal fits within viewport */
+  overflow-y: auto; /* Allow content scrolling inside the modal */
+}
+
+/* Close button */
+.close-modal-btn {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #333;
+}
+
+/* Form styling */
+.modal-content form div {
+  margin-bottom: 1rem;
+}
+
+.modal-content form label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.modal-content form input,
+.modal-content form textarea {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  @apply my-2;
+}
+
+.modal-content form button {
+  display: block;
+  width: 100%;
+  padding: 0.75rem;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.modal-content form button:hover {
+  background-color: #0056b3;
+}
+
+/* Hidden state for modal */
+.hidden {
+  display: none;
+}
+
+/* Disable body scroll when modal is active */
+.no-scroll {
+  overflow: hidden;
+}
+
+/* Responsive styling */
+@media (max-width: 768px) {
+  .modal-content {
+    max-width: 90%; /* Make modal narrower on smaller screens */
+    padding: 1.5rem; /* Reduce padding for better fit */
+  }
+}

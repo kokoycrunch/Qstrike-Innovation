@@ -3,13 +3,13 @@
   //Hero
   .hero {
     position: relative;
-    background-image: url("http://qstrikeinov.test/wp-content/uploads/2024/10/slider-2.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     @apply flex flex-col justify-center;
 
 
     .background-video {
+      background-image: url("http://qstrikeinov.test/wp-content/uploads/2024/10/slider-2.jpg");
       position: relative;
 
       video {
@@ -36,13 +36,17 @@
       @media (min-width: 40em) {
         @apply grid-cols-2;
       }
-      @media (min-width: 60em) {
-        @apply grid-cols-2;
+      @media (width >= 75rem) {
+        @apply grid-cols-5;
         width: 100%;
       }
 
       .cont1 {
         @apply col-span-1 text-darkgray p-4;
+
+        @media (width >= 75rem) {
+        @apply col-span-2;
+        }
       }
 
       .cont2 {
@@ -55,6 +59,10 @@
         @media (min-width: 40em) {
           display: block;
         }
+
+        @media (width >= 75rem) {
+          @apply col-span-3;
+          }
       }
     }
     .hero-text {

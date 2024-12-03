@@ -80,13 +80,16 @@ collect(['setup', 'filters'])
         wp_enqueue_script('animation', get_template_directory_uri() . '/resources/scripts/main/animation.js', [], null, true);
         wp_enqueue_script('burger-menu', get_template_directory_uri() . '/resources/scripts/main/navigation.js', [], null, true);
 
-         // Conditionally enqueue accordion script for specific pages
+         // Conditionally enqueue accordion script for specific pages or posts
         if (is_page(['home'])) {
         wp_enqueue_script('hero-banner', get_template_directory_uri() . '/resources/scripts/main/herobanner.js', ['jquery'], null, true);
         }
         if (is_page(['our-team', 'careers'])) {
             wp_enqueue_script('accordion-dropdown', get_template_directory_uri() . '/resources/scripts/main/accordion.js', ['jquery'], null, true);
-            }
+        }
+        if (is_singular(['positions', 'internships'])) {
+            wp_enqueue_script('pop-up', get_template_directory_uri() . '/resources/scripts/main/pop-up.js', ['jquery'], null, true);
+        }
     }
     add_action('wp_enqueue_scripts', 'enqueue_jquery');
 

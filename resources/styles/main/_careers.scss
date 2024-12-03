@@ -77,9 +77,6 @@
             @media (width >= 60em) {
             }
           }
-          p {
-            @apply pb-4;
-          }
           @apply col-span-1 p-4 bg-lightgray grid gap-6 grid-cols-1 content-between;
         }
       }
@@ -136,6 +133,11 @@
           }
       }
     }
-    //Bullets
+    //tags
+    .location {
+      width: max-content;
+      font-weight: 100;
+      @apply mt-2 mb-4;
+    }
   }
 

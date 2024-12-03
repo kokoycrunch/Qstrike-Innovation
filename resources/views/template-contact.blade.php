@@ -20,7 +20,9 @@
     <div class="wrapper">
       <h2 data-aos="fade-down" data-aos-delay="200">send us a message</h2>
           {{-- Contact Form --}}
-          @php echo do_shortcode('[contact-form-7 id="4ac5f67" title="test job application"]'); @endphp
+          <div class="wrapper__form">
+            @php echo do_shortcode('[contact-form-7 id="6742ea2" title="Contact us"]'); @endphp
+          </div>
           {{-- End Contact Form --}}
     </div>
   </div>
