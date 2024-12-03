@@ -15,7 +15,7 @@
     @if ($video_url)
         <div class="background-video" data-aos="fade-left" data-aos-delay="200">
             <video autoplay muted loop playsinline class="video-bg">
-                <source src="{{ $video_url }}" type="video/mp4">
+                <source src="{{ $video_url }}" type="video/mp4" loading="lazy">
                 Your browser does not support the video tag.
             </video>
         </div>
@@ -25,7 +25,7 @@
       $logo_bg_id = get_field('hero_logobg', 'options'); // Get the image ID
       $logo_bg_url = $logo_bg_id ? wp_get_attachment_url($logo_bg_id) : null; // Get the image URL
       @endphp
-      <div class="cont1" style="background-image: url('{{ $logo_bg_url }}'); background-size: contain; background-repeat: no-repeat; background-position: left; background-color: rgba(0, 0, 0, 1.0);">
+      <div class="cont1" style="background-image: url('{{ $logo_bg_url }}'); background-size: contain; background-repeat: no-repeat; background-position: left; background-color: rgba(0, 0, 0, 1.0);" loading="lazy">
       </div>
       <div class="cont2"></div>
     </div>

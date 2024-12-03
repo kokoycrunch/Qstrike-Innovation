@@ -34,7 +34,7 @@ export default async (app) => {
    */
   app
     .serve('http://localhost:3000')
-    .proxy('http://qstrikeinov.test')
+    .proxy('https://qstrikeinov.test')
     .watch(['resources/views', 'app']);
 
   /**

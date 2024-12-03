@@ -150,3 +150,67 @@ h5 {
   }
 }
 
+.browse-files {
+  @apply bg-darkgray !important;
+}
+.igd-file-uploader .igd-file-uploader-inner {
+  @apply bg-secondary  !important;
+}
+
+//CF7 style
+
+.wpcf7 form .wpcf7-response-output {
+  margin: 2em 0.5em 1em;
+  padding: 0.2em 1em;
+  border: 2px solid #00a0d2; /* Blue */
+}
+
+.wpcf7 form.init .wpcf7-response-output {
+  display: none;
+}
+
+.wpcf7 form.sent .wpcf7-response-output {
+  @apply border-darkgray flex justify-center mx-0;
+}
+
+.wpcf7 form.failed .wpcf7-response-output,
+.wpcf7 form.aborted .wpcf7-response-output {
+  @apply border-red-600 flex justify-center mx-0;
+}
+
+.wpcf7 form.spam .wpcf7-response-output {
+  border-color: #f56e28; /* Orange */
+}
+
+.wpcf7 form.invalid .wpcf7-response-output,
+.wpcf7 form.unaccepted .wpcf7-response-output {
+  border-color: #ffb900; /* Yellow */
+}
+
+
+//Page Header
+
+.error-404-wrapper {
+  height: 50vh;
+  @apply text-secondary bg-primary p-4 text-center flex items-center justify-center;
+
+  @media (width >= 40em ) {
+    height: 70vh;
+  }
+  @media (width >= 60em ) {
+    height: 80vh;
+  }
+  @media (width >= 75em ) {
+    height: 90vh;
+  }
+  .cont {
+    @apply flex flex-col gap-5;
+  }
+}
+
+//Search
+
+#search_input {
+  height: 2rem;
+  @apply p-3 text-primary;
+}

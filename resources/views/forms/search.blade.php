@@ -9,6 +9,7 @@
       placeholder="{!! esc_attr_x('Search &hellip;', 'placeholder', 'sage') !!}"
       value="{{ get_search_query() }}"
       name="s"
+      id="search_input"
     >
   </label>
 

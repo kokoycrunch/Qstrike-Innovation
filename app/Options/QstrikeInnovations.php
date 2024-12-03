@@ -267,6 +267,14 @@ class QstrikeInnovations extends Field
             ])
         ->endRepeater();
 
+        $fields->addtab('Misc DO NOT EDIT');
+        $fields
+        //Careers hero images
+        ->addImage('error_404', [
+            'label' => 'Error 404 background',
+            'return_format' => 'id',  // returns the image ID
+        ]);
+
         return $fields->build();
     }
 }

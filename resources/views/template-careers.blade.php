@@ -12,7 +12,24 @@
   $career_bg_url = $career_bg_id ? wp_get_attachment_url($career_bg_id) : null;
   $careerhero_bg_id = get_field('career_herobg', 'options'); // Get the image ID
   $careerhero_bg_url = $careerhero_bg_id ? wp_get_attachment_url($careerhero_bg_id) : null; // Get the image URL
+
+    // Custom query for Positions post type
+  $args1 = [
+      'post_type' => 'positions', // Change this if your post type is named differently
+      'posts_per_page' => -1, // Adjust the number of posts to display (-1 for all posts)
+      'post_status' => 'publish', // Only show published posts
+  ];
+
+  $args2 = [
+      'post_type' => 'internships', // Change this if your post type is named differently
+      'posts_per_page' => -1, // Adjust the number of posts to display (-1 for all posts)
+      'post_status' => 'publish', // Only show published posts
+  ];
+
+  $positions_query2 = new WP_Query($args2); // Run the custom query
+  $positions_query = new WP_Query($args1); // Run the custom query
   @endphp
+
   <div class="hero" style="background-image: url('{{ $career_bg_url }}'); background-size: contain; background-repeat: no-repeat; background-position: left;">
     <div class="bg-qstrike" style="background-image: url('{{ $careerhero_bg_url }}'); background-size: contain; background-repeat: no-repeat; background-position: right;" data-aos="fade-left" data-aos-delay="10">
         <div class="hero__cont">
@@ -38,27 +55,36 @@
               </div>
               <div class="accordion-content2">
                 <div class="position-list">
-                  @if (have_rows('regular_position', 'option')) {{-- Correct key and options scope --}}
-                  @while (have_rows('regular_position', 'option')) @php the_row() @endphp
-                    <div class="job-card">
-                      <div class="job-card__cont1">
-                              @php
-                                  $icon_id = get_sub_field('icon');
-                                  $icon_url = $icon_id ? wp_get_attachment_image_url($icon_id, 'full') : null;
-                              @endphp
-                              @if ($icon_url)
-                                  <img src="{{ $icon_url }}" alt="{{ get_sub_field('position') }}" class="job-icon">
-                              @endif
-                                  <h3>{{ get_sub_field('position') }}</h3>
+                  @if ($positions_query->have_posts())
+                  @while ($positions_query->have_posts())
+                    @php $positions_query->the_post(); @endphp
+                    @php
+                        // Get the title from the ACF field, fallback to post title if ACF field is empty
+                        $position_title = get_field('title'); // ACF field name is 'title'
+                        $position_title = $position_title ? $position_title : get_the_title();
+
+                        $position_location = get_field('location'); // ACF field name is 'location'
+                    @endphp
+                      <div class="job-card">
+
+                          <div class="job-card__cont1">
+                                      <h3>{{ $position_title }}</h3>
+                          </div>
+
+                          <div class="job-card__cont2">
+                                      <p class="location">{{ $position_location ? $position_location : 'Location not specified' }}</p>
+                                      <form action="{{ get_permalink() }}" method="get">
+                                        <button class="bg-graybase px-6 py-1">Apply</button>
+                                      </form>
+                          </div>
+
                       </div>
-                            @php $location = get_sub_field('location') @endphp
-                      <div class="job-card__cont2">
-                                  <p>{{ $location == 'option1' ? 'Work from home' : 'On site' }}</p>
-                                  <button class="bg-graybase px-6 py-1"><b>Apply</b></button>
-                      </div>
-                    </div>
                   @endwhile
-                @endif
+                  @else
+                  <p>No positions available at the moment.</p>
+                  @endif
+                  @php wp_reset_postdata(); @endphp
+
                 </div>
               </div>
           </div>
@@ -75,27 +101,36 @@
               </div>
               <div class="accordion-content2">
                 <div class="position-list">
-                  @if (have_rows('internship', 'option')) {{-- Correct key and options scope --}}
-                  @while (have_rows('internship', 'option')) @php the_row() @endphp
-                    <div class="job-card">
-                      <div class="job-card__cont1">
-                              @php
-                                  $icon_id = get_sub_field('icon');
-                                  $icon_url = $icon_id ? wp_get_attachment_image_url($icon_id, 'full') : null;
-                              @endphp
-                              @if ($icon_url)
-                                  <img src="{{ $icon_url }}" alt="{{ get_sub_field('position') }}" class="job-icon">
-                              @endif
-                                  <h3>{{ get_sub_field('position') }}</h3>
-                      </div>
-                            @php $location = get_sub_field('location') @endphp
-                      <div class="job-card__cont2">
-                                  <p>{{ $location == 'option1' ? 'Work from home' : 'On site' }}</p>
-                                  <button class="bg-graybase px-6 py-1"><b>Apply</b></button>
-                      </div>
-                    </div>
-                  @endwhile
-                @endif
+                    @if ($positions_query2->have_posts())
+                    @while ($positions_query2->have_posts())
+                      @php $positions_query2->the_post(); @endphp
+                      @php
+                          // Get the title from the ACF field, fallback to post title if ACF field is empty
+                          $position_title = get_field('title'); // ACF field name is 'title'
+                          $position_title = $position_title ? $position_title : get_the_title();
+
+                          $position_location = get_field('location'); // ACF field name is 'location'
+                      @endphp
+                        <div class="job-card">
+
+                            <div class="job-card__cont1">
+                                        <h3>{{ $position_title }}</h3>
+                            </div>
+
+                            <div class="job-card__cont2">
+                                        <p class="location">{{ $position_location ? $position_location : 'Location not specified' }}</p>
+                                        <form action="{{ get_permalink() }}" method="get">
+                                          <button class="bg-graybase px-6 py-1">Apply</button>
+                                        </form>
+                            </div>
+
+                        </div>
+                    @endwhile
+                    @else
+                    <p>No positions available at the moment.</p>
+                    @endif
+                    @php wp_reset_postdata(); @endphp
+
                 </div>
               </div>
           </div>
@@ -128,3 +163,6 @@
 
 </div>
 @endsection
+
+
+
