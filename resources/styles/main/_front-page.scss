@@ -5,13 +5,18 @@
     position: relative;
     background-repeat: no-repeat;
     background-size: cover;
-    @apply flex flex-col justify-center;
+    @apply flex flex-col justify-center ;
 
 
     .background-video {
-      background-image: url("http://qstrikeinov.test/wp-content/uploads/2024/10/slider-2.jpg");
       position: relative;
+      display: none;
+      @apply bg-primary;
 
+
+      @media (width >= 40em) {
+        display: block;
+      }
       video {
         object-fit: cover;
         width: 100%;
@@ -22,23 +27,31 @@
           object-position: right;
           max-height: 800px;
         }
+        @media (width > 120em) {
+          object-position: center;
+        }
       }
     }
 
-    &__cont1 {
-      position: absolute;
-      top: 0;
-      left: 0;
+    &__cont {
+      position: relative;
       width: 100%;
-      height: auto; // JavaScript will handle the height
+      height: 12.5rem;
       @apply grid grid-cols-1;
 
-      @media (min-width: 40em) {
+      @media (width < 40em) {
+        height: 14.625rem;
+      }
+
+      @media (width >= 40em) {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: auto; // JavaScript will handle the height
         @apply grid-cols-2;
       }
       @media (width >= 75rem) {
         @apply grid-cols-5;
-        width: 100%;
       }
 
       .cont1 {
@@ -56,7 +69,7 @@
         border-bottom: 0 solid transparent; // JavaScript will adjust the border
         @apply col-span-1;
 
-        @media (min-width: 40em) {
+        @media (width >= 40em) {
           display: block;
         }
 
@@ -78,6 +91,13 @@
         top: 6.25rem;
         @apply p-0;
       }
+
+      @media (width > 125em) {
+        width: 125rem;
+        top: 6.25rem;
+        @apply p-0;
+      }
+
 
       h1 {
         @apply text-darkgray;

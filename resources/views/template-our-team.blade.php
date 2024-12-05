@@ -62,137 +62,110 @@
               Every individual contributes to our shared success.
             </p>
             {{-- C-Suite --}}
-            <div class="accordion2">
-              <div class="accordion-item2">
-                <div>
-                    <div class="accordion-header2 h-full bg-primary" data-aos="fade-left" data-aos-delay="200">
-                      <h3>
-                        <i class="fi fi-bs-angle-double-right"></i> C-Suite
-                      </h3>
-                    </div>
-                    <div class="accordion-content2 qstrike-faces">
-                      <div class="qstrike-faces__cont">
-                        @if (have_rows('c_suite', 'options'))
-                        @while (have_rows('c_suite', 'options')) @php the_row() @endphp
-                          @php
-                              $main_image_url = wp_get_attachment_image_url(get_sub_field('main_image'), 'full');
-                              $hover_image_url = wp_get_attachment_image_url(get_sub_field('hover_image'), 'full') ?: $main_image_url; // Fallback to main image if no hover image
-                          @endphp
-                              <div>
-                                  <div class="employee-card col-span-1" data-hover-image="{{ $hover_image_url }}">
-                                    <img src="{{ $main_image_url }}" alt="{{ get_sub_field('full_name') }}'s Image" class="employee-image" loading="lazy">
-                                  </div>
-                                  <div class="overlay">
-                                    <h4>{{ get_sub_field('full_name') }}</h4>
-                                    <p>{{ get_sub_field('position') }}</p>
-                                  </div>
-                              </div>
-                        @endwhile
-                        @endif
+            <div data-aos="fade-left" data-aos-delay="200">
+              <h3>C-SUITE</h3>
+              <hr>
+            </div>
+            <div class="qstrike-faces">
+              <div class="qstrike-faces__cont">
+                @if (have_rows('c_suite', 'options'))
+                @while (have_rows('c_suite', 'options')) @php the_row() @endphp
+                  @php
+                      $main_image_url = wp_get_attachment_image_url(get_sub_field('main_image'), 'full');
+                      $hover_image_url = wp_get_attachment_image_url(get_sub_field('hover_image'), 'full') ?: $main_image_url; // Fallback to main image if no hover image
+                  @endphp
+                      <div data-aos="fade-up" data-aos-delay="200">
+                          <div class="employee-card col-span-1" data-hover-image="{{ $hover_image_url }}">
+                            <img src="{{ $main_image_url }}" alt="{{ get_sub_field('full_name') }}'s Image" class="employee-image" loading="lazy">
+                          </div>
+                          <div class="overlay">
+                            <h4>{{ get_sub_field('full_name') }}</h4>
+                            <p>{{ get_sub_field('position') }}</p>
+                          </div>
                       </div>
-                    </div>
-                </div>
+                @endwhile
+                @endif
               </div>
             </div>
             {{-- Admin --}}
-            <div class="accordion2">
-              <div class="accordion-item2">
-                <div>
-                    <div class="accordion-header2 h-full bg-primary" data-aos="fade-left" data-aos-delay="200">
-                      <h3 class="">
-                        <i class="fi fi-bs-angle-double-right"></i> Admin
-                      </h3>
-                    </div>
-                    <div class="accordion-content2 qstrike-faces">
-                      <div class="qstrike-faces__cont">
-                        @if (have_rows('admin', 'options'))
-                        @while (have_rows('admin', 'options')) @php the_row() @endphp
-                          @php
-                              $main_image_url = wp_get_attachment_image_url(get_sub_field('main_image'), 'full');
-                              $hover_image_url = wp_get_attachment_image_url(get_sub_field('hover_image'), 'full') ?: $main_image_url; // Fallback to main image if no hover image
-                          @endphp
-                              <div>
-                                  <div class="employee-card col-span-1" data-hover-image="{{ $hover_image_url }}">
-                                    <img src="{{ $main_image_url }}" alt="{{ get_sub_field('full_name') }}'s Image" class="employee-image" loading="lazy">
-                                  </div>
-                                  <div class="overlay">
-                                    <h4>{{ get_sub_field('full_name') }}</h4>
-                                    <p>{{ get_sub_field('position') }}</p>
-                                  </div>
-                              </div>
-                        @endwhile
-                        @endif
+            <div data-aos="fade-left" data-aos-delay="200">
+              <h3>ADMIN</h3>
+              <hr>
+            </div>
+            <div class="qstrike-faces">
+              <div class="qstrike-faces__cont">
+                @if (have_rows('admin', 'options'))
+                @while (have_rows('admin', 'options')) @php the_row() @endphp
+                  @php
+                      $main_image_url = wp_get_attachment_image_url(get_sub_field('main_image'), 'full');
+                      $hover_image_url = wp_get_attachment_image_url(get_sub_field('hover_image'), 'full') ?: $main_image_url; // Fallback to main image if no hover image
+                  @endphp
+                      <div data-aos="fade-up" data-aos-delay="200">
+                          <div class="employee-card col-span-1" data-hover-image="{{ $hover_image_url }}">
+                            <img src="{{ $main_image_url }}" alt="{{ get_sub_field('full_name') }}'s Image" class="employee-image" loading="lazy">
+                          </div>
+                          <div class="overlay">
+                            <h4>{{ get_sub_field('full_name') }}</h4>
+                            <p>{{ get_sub_field('position') }}</p>
+                          </div>
                       </div>
-                    </div>
-                </div>
+                @endwhile
+                @endif
               </div>
             </div>
             {{-- Creative --}}
-            <div class="accordion2">
-              <div class="accordion-item2">
-                <div>
-                    <div class="accordion-header2 h-full bg-primary" data-aos="fade-left" data-aos-delay="200">
-                      <h3 class="">
-                        <i class="fi fi-bs-angle-double-right"></i> Creative
-                      </h3>
-                    </div>
-                    <div class="accordion-content2 qstrike-faces">
-                      <div class="qstrike-faces__cont">
-                        @if (have_rows('creative', 'options'))
-                        @while (have_rows('creative', 'options')) @php the_row() @endphp
-                          @php
-                              $main_image_url = wp_get_attachment_image_url(get_sub_field('main_image'), 'full');
-                              $hover_image_url = wp_get_attachment_image_url(get_sub_field('hover_image'), 'full') ?: $main_image_url; // Fallback to main image if no hover image
-                          @endphp
-                              <div>
-                                  <div class="employee-card col-span-1" data-hover-image="{{ $hover_image_url }}">
-                                    <img src="{{ $main_image_url }}" alt="{{ get_sub_field('full_name') }}'s Image" class="employee-image" loading="lazy">
-                                  </div>
-                                  <div class="overlay">
-                                    <h4>{{ get_sub_field('full_name') }}</h4>
-                                    <p>{{ get_sub_field('position') }}</p>
-                                  </div>
-                              </div>
-                        @endwhile
-                        @endif
-                        </div>
-                    </div>
-                </div>
+            <div data-aos="fade-left" data-aos-delay="200">
+              <h3>CREATIVE</h3>
+              <hr>
+            </div>
+            <div class="qstrike-faces">
+              <div class="qstrike-faces__cont">
+                @if (have_rows('creative', 'options'))
+                @while (have_rows('creative', 'options')) @php the_row() @endphp
+                  @php
+                      $main_image_url = wp_get_attachment_image_url(get_sub_field('main_image'), 'full');
+                      $hover_image_url = wp_get_attachment_image_url(get_sub_field('hover_image'), 'full') ?: $main_image_url; // Fallback to main image if no hover image
+                  @endphp
+                      <div data-aos="fade-up" data-aos-delay="200">
+                          <div class="employee-card col-span-1" data-hover-image="{{ $hover_image_url }}">
+                            <img src="{{ $main_image_url }}" alt="{{ get_sub_field('full_name') }}'s Image" class="employee-image" loading="lazy">
+                          </div>
+                          <div class="overlay">
+                            <h4>{{ get_sub_field('full_name') }}</h4>
+                            <p>{{ get_sub_field('position') }}</p>
+                          </div>
+                      </div>
+                @endwhile
+                @endif
               </div>
             </div>
             {{-- Engineering --}}
-            <div class="accordion2">
-              <div class="accordion-item2">
-                <div>
-                    <div class="accordion-header2 h-full bg-primary" data-aos="fade-left" data-aos-delay="200">
-                      <h3 class="">
-                        <i class="fi fi-bs-angle-double-right"></i> Engineering
-                      </h3>
-                    </div>
-                    <div class="accordion-content2 qstrike-faces">
-                      <div class="qstrike-faces__cont">
-                          @if (have_rows('Engineering', 'options'))
-                          @while (have_rows('Engineering', 'options')) @php the_row() @endphp
-                            @php
-                                $main_image_url = wp_get_attachment_image_url(get_sub_field('main_image'), 'full');
-                                $hover_image_url = wp_get_attachment_image_url(get_sub_field('hover_image'), 'full') ?: $main_image_url; // Fallback to main image if no hover image
-                            @endphp
-                                <div>
-                                    <div class="employee-card col-span-1" data-hover-image="{{ $hover_image_url }}">
-                                      <img src="{{ $main_image_url }}" alt="{{ get_sub_field('full_name') }}'s Image" class="employee-image" loading="lazy">
-                                    </div>
-                                    <div class="overlay">
-                                      <h4>{{ get_sub_field('full_name') }}</h4>
-                                      <p>{{ get_sub_field('position') }}</p>
-                                    </div>
-                                </div>
-                          @endwhile
-                          @endif
+            <div data-aos="fade-left" data-aos-delay="200">
+              <h3>ENGINEERING</h3>
+              <hr>
+            </div>
+            <div class="qstrike-faces">
+              <div class="qstrike-faces__cont">
+                @if (have_rows('Engineering', 'options'))
+                @while (have_rows('Engineering', 'options')) @php the_row() @endphp
+                  @php
+                      $main_image_url = wp_get_attachment_image_url(get_sub_field('main_image'), 'full');
+                      $hover_image_url = wp_get_attachment_image_url(get_sub_field('hover_image'), 'full') ?: $main_image_url; // Fallback to main image if no hover image
+                  @endphp
+                      <div data-aos="fade-up" data-aos-delay="200">
+                          <div class="employee-card col-span-1" data-hover-image="{{ $hover_image_url }}">
+                            <img src="{{ $main_image_url }}" alt="{{ get_sub_field('full_name') }}'s Image" class="employee-image" loading="lazy">
+                          </div>
+                          <div class="overlay">
+                            <h4>{{ get_sub_field('full_name') }}</h4>
+                            <p>{{ get_sub_field('position') }}</p>
+                          </div>
                       </div>
-                    </div>
-                </div>
+                @endwhile
+                @endif
               </div>
             </div>
+
       </div>
   </div>
 
