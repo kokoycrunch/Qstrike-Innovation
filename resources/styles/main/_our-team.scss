@@ -1,4 +1,5 @@
 .our-team {
+  @apply bg-secondary;
   .hero{
 
     &__cont1{
@@ -79,6 +80,21 @@
         line-height: 120%;
         letter-spacing: -1px;
       }
+      h3 {
+        font-style: italic;
+        font-weight: 500;
+        padding: 2rem 0 .250rem 0;
+
+        @media (width >= 40em) {
+          padding: 3rem 0 .250rem 0;
+        }
+        @media (width >= 75em) {
+          padding: 6.25rem 0 .250rem 0;
+        }
+      }
+      hr {
+        @apply border-[1px] border-primary;
+      }
       .subheading {
         @apply py-4;
 
@@ -118,10 +134,10 @@
 // Qstrike-faces
   .qstrike-faces {
     &__cont {
-      @apply w-full pt-8 grid grid-cols-3 gap-3;
+      @apply w-full pt-4 grid grid-cols-3 gap-3;
 
       @media (width >= 40em) {
-        @apply pt-8 grid grid-cols-4 gap-4;
+        @apply pt-6 grid grid-cols-4 gap-4;
       }
       @media (width >= 60em) {
         @apply pt-8 grid grid-cols-5 gap-6;

@@ -24,7 +24,7 @@ class App extends Composer
     {
         return [
             'siteName' => $this->siteName(),
-            'siteLogo' => get_field('logo', 'options'),
+            'siteLogo' => get_field('site_logo', 'options'),
             'heroLogobg' => get_field('logo', 'options'),
             'trustedBrands' => get_field('brands', 'options'),
             'themeVideoId' => get_field('theme_video', 'options'),

@@ -78,3 +78,4 @@ export default async (app) => {
     .useTailwindFontFamily()
     .useTailwindFontSize();
 };
+

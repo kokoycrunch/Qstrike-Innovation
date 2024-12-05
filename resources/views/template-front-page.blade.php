@@ -20,7 +20,7 @@
             </video>
         </div>
     @endif
-    <div class="hero__cont1">
+    <div class="hero__cont">
       @php
       $logo_bg_id = get_field('hero_logobg', 'options'); // Get the image ID
       $logo_bg_url = $logo_bg_id ? wp_get_attachment_url($logo_bg_id) : null; // Get the image URL

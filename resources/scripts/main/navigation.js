@@ -1,48 +1,44 @@
-const btnOpen = document.querySelector('#btnOpen');
-const btnClose = document.querySelector('#btnClose');
-const media = window.matchMedia('(width < 40em)');
-const topNavMenu = document.querySelector('.topnav__menu');
-// const main = document.querySelector('main');
-// const body = document.querySelector('body');
+document.addEventListener('DOMContentLoaded', () => {
+  const menuList = document.getElementById('menu-primary-menu');
+  const menuIcon = document.querySelector('.menu-icon i');
+  const header = document.querySelector('.header-cont');
+  const headerPrimary = document.querySelector('.header-primary');
 
-
-function setupTopNav(e) {
-  if (e.matches) {
-    //is mobile
-    console.log('is mobile');
-    // topNavMenu.setAttribute('inert', '');
-    topNavMenu.style.transition = 'none';
-  } else {
-    // is table/desktop
-    console.log('is desktop');
-    topNavMenu.removeAttribute('inert');
-    closeMobileMenu();
+  function toggleMenu() {
+    if (menuList.style.maxHeight === '0rem') {
+      menuList.style.maxHeight = '18.75rem';
+    } else {
+      menuList.style.maxHeight = '0rem';
+    }
   }
-}
 
-function openMobileMenu() {
-  btnOpen.setAttribute('aria-expanded', 'true');
-  // topNavMenu.removeAttribute('inert');
-  topNavMenu.removeAttribute('style');
-  // main.setAttribute('inert', '');
-  btnClose.focus();
-}
+  function resetMenuOnResize() {
+    if (window.innerWidth >= 960) { // 60em in pixels
+      menuList.style.maxHeight = null; // Resets height
+    } else {
+      menuList.style.maxHeight = '0rem'; // Ensures it's hidden on mobile
+    }
+  }
 
-function closeMobileMenu() {
-  btnOpen.setAttribute('aria-expanded', 'false');
-  // topNavMenu.setAttribute('inert', '');
-  // main.removeAttribute('inert');
-  btnOpen.focus();
+  function handleScroll() {
+    if (window.scrollY > 50) { // Threshold for when to apply transparency
+      header.classList.add('scrolled');
 
-  setTimeout(() => {
-    topNavMenu.style.transition = 'none';
-  }, 500);
-}
+      // Apply scaling only if the screen width is >= 60em
+      if (window.innerWidth >= 960) {
+        headerPrimary.style.transform = 'scale(0.99)'; // Scale down on scroll
+      }
+    } else {
+      header.classList.remove('scrolled');
+      headerPrimary.style.transform = 'scale(1)'; // Reset to original size
+    }
+  }
 
-setupTopNav(media);
-btnOpen.addEventListener('click', openMobileMenu);
-btnClose.addEventListener('click', closeMobileMenu);
+  menuIcon.addEventListener('click', toggleMenu);
+  window.addEventListener('resize', resetMenuOnResize);
+  window.addEventListener('scroll', handleScroll);
 
-media.addEventListener('change', function (e){
-  setupTopNav(e);
+  // Initialize on load
+  resetMenuOnResize();
+  handleScroll();
 });
