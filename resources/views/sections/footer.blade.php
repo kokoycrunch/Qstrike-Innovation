@@ -17,7 +17,12 @@
       </div>
     </div>
     <div class="list-cont">
-      <h5>LATEST BLOG</h5>
+      <h5>SOCIAL MEDIA</h5>
+      <ul class="flex gap-3">
+        <li><img src="http://qstrikeinov.test/wp-content/uploads/2024/11/Facebook.png" alt=""></li>
+        <li><img src="http://qstrikeinov.test/wp-content/uploads/2024/11/Instagram.png" alt=""></li>
+        <li><img src="http://qstrikeinov.test/wp-content/uploads/2024/11/LinkedIn.png" alt=""></li>
+      </ul>
     </div>
     <div class="list-cont">
       <h5>QUICK LINKS</h5>
@@ -26,12 +31,7 @@
             {!! wp_nav_menu(['theme_location' => 'footer_menu', 'menu_class' => 'footer-nav', 'echo' => false]) !!}
         </nav>
       @endif
-      <h5 class="py-2">SOCIAL MEDIA</h5>
-      <ul class="flex gap-3">
-        <li><img src="http://qstrikeinov.test/wp-content/uploads/2024/11/Facebook.png" alt=""></li>
-        <li><img src="http://qstrikeinov.test/wp-content/uploads/2024/11/Instagram.png" alt=""></li>
-        <li><img src="http://qstrikeinov.test/wp-content/uploads/2024/11/LinkedIn.png" alt=""></li>
-      </ul>
+
     </div>
   </div>
   <p class="text-center py-10">© 2024. ALL RIGHTS RESERVED QUICKSTRIKE MANUFACTURING</p>

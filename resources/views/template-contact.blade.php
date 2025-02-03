@@ -9,16 +9,15 @@
   {{-- Hero --}}
   <div class="hero">
     <div class="wrapper">
-      <h1 data-aos="fade-right" data-aos-delay="200">contact <span>us</span></h1>
-      <p data-aos="fade-up" data-aos-delay="200">Reach out to our team with any questions,
-        and let’s start the conversation.
+      <h1 data-aos="fade-right" data-aos-delay="200">{{$contactHeading1}} <span>{{$contactHeading2}}</span></h1>
+      <p data-aos="fade-up" data-aos-delay="200">{{$contactSubheading}}
       </p>
     </div>
   </div>
   {{-- Message form --}}
   <div class="message-form">
     <div class="wrapper">
-      <h2 data-aos="fade-down" data-aos-delay="200">send us a message</h2>
+      <h2 data-aos="fade-down" data-aos-delay="200">{{$formHeading}}</h2>
           {{-- Contact Form --}}
           <div class="wrapper__form">
             @php echo do_shortcode('[contact-form-7 id="6742ea2" title="Contact us"]'); @endphp
@@ -30,9 +29,8 @@
   <div class="visit-us">
     <div class="wrapper">
       <div class="wrapper__cont1">
-        <h2 data-aos="fade-down" data-aos-delay="200">visit us</h2>
-        <p data-aos="fade-right" data-aos-delay="200">2F Alson Sportswear Inc Bldg Old Road Mcarthur Hway
-          Telabastagan
+        <h2 data-aos="fade-down" data-aos-delay="200">{{$visitUsHeading}}</h2>
+        <p data-aos="fade-right" data-aos-delay="200">{{$visitUsSubheading}}
         </p>
       </div>
       <div class="wrapper__cont2">

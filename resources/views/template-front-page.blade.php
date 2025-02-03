@@ -30,12 +30,8 @@
       <div class="cont2"></div>
     </div>
     <div class="hero-text">
-      <h1 data-aos="fade-right" data-aos-delay="200">be the <span>game changer</span></h1>
-      <p data-aos="fade-up" data-aos-delay="200">Our craftsmanship is equal to that of leading
-      brands in the industry and we are so confident
-      in our uniform quality that we back your order
-      with a lifetime manufacturing warranty.
-      </p>
+      <h1 data-aos="fade-right" data-aos-delay="200">{{ $homePageHeroHeader1 }} <span>{{ $homePageHeroHeader2 }}</span></h1>
+      <p data-aos="fade-up" data-aos-delay="200">{{ $homePageHeroSubheadline }}</p>
     </div>
   </div>
 
@@ -43,16 +39,8 @@
   <div class="about">
     <div class="about__cont">
       <div class="">
-        <h2 data-aos="fade-right" data-aos-delay="200">ABOUT OUR COMPANY</h2>
-        <p data-aos="fade-up" data-aos-delay="200">
-          We are a dedicated team of outsourced web and software
-           developers, graphic designers, and project managers
-           specializing in pattern making, website design, and
-           comprehensive web development services. Our mission
-           is to provide vital I.T. support and technology solutions
-           that drive efficiency and innovation for QuickStrike Corp
-           and PROLOOK Sports, based in Utah, USA.
-          </p>
+        <h2 data-aos="fade-right" data-aos-delay="200">{{ $aboutHeader }}</h2>
+        <p data-aos="fade-up" data-aos-delay="200">{{ $aboutSubheadline }}</p>
       </div>
       <div data-aos="fade-left" data-aos-delay="200">
         <img src="http://qstrikeinov.test/wp-content/uploads/2024/11/placewhy-holder.jpg" alt="">
@@ -62,21 +50,18 @@
   {{-- Our history --}}
   <div class="history" >
     <div class="history__cont1">
-      <h2 data-aos="fade-down" data-aos-delay="200">our history</h2>
-      <p data-aos="fade-up" data-aos-delay="200">From humble beginnings to becoming a recognized leader in sports apparel and tech solutions,
-        QStrike Innovations has continually pushed boundaries. Our story is a testament to decades of
-        dedication, strategic partnerships, and unwavering passion for excellence. Explore our
-        transformative milestones that have shaped who we are today.</p>
+      <h2 data-aos="fade-down" data-aos-delay="200">{{ $ourHistoryHeader }}</h2>
+      <p data-aos="fade-up" data-aos-delay="200"> {{ $ourHistorySubheadline }} </p>
     </div>
     <div class="history__cont2" data-aos="fade-left" data-aos-delay="200">
     </div>
     <div class="history__cont3">
         <ul>
-          @if(have_rows('history', 'option'))
-          @while(have_rows('history', 'option')) @php the_row() @endphp
+          @if(have_rows('our_history_timeline'))
+          @while(have_rows('our_history_timeline')) @php the_row() @endphp
             <li data-aos="fade-up" data-aos-delay="200">
                   <h3 class="event-date">{{ get_sub_field('date') }}</h3>
-                  <p class="event-description">{{ get_sub_field('happening') }}</p>
+                  <p class="event-description">{{ get_sub_field('milestone') }}</p>
             </li>
             @endwhile
             @endif
@@ -86,15 +71,15 @@
   {{-- Mission Vission --}}
   <div class="mission-vision">
     <div class="mission-vision__cont">
-      <h2 data-aos="fade-down" data-aos-delay="200">Mission and Vission</h2>
-      <p data-aos="fade-right" data-aos-delay="200">At Qstrike Innovations, our vision is simple:</p>
+      <h2 data-aos="fade-down" data-aos-delay="200"> {{ $missioniVissionHeader }} </h2>
+      <p data-aos="fade-right" data-aos-delay="200"> {{ $missionVissionSubheader }} </p>
       <blockquote class="text-darkgray" data-aos="fade-left" data-aos-delay="200">“TO BUILD <strong>SUPERIOR SPORTS APPAREL</strong> AND <strong>TECH</strong> FOR <strong>EVERY BODY</strong> ON EARTH.”</blockquote>
     </div>
   </div>
   {{-- Trusted by --}}
   <div class="trusted-by">
     <div class="trusted-by__cont">
-      <p class="text-center py-6" data-aos="fade-down" data-aos-delay="200">worked with some of the best our there</p>
+      <p class="text-center py-6" data-aos="fade-down" data-aos-delay="200">  {{ $workedWith }} </p>
       @php
       $trusted_brands_id = get_field('trusted_brands', 'options'); // Get the image ID
       $trusted_brands_url = $trusted_brands_id ? wp_get_attachment_url($trusted_brands_id) : null; // Get the URL
@@ -111,7 +96,7 @@
     <div class="partner-factories__cont">
       <div class="cont1">
         <p class="heading uppercase text-secondary" data-aos="fade-right" data-aos-delay="200">
-          partner factories
+          {{ $partnerFactoriesHeadline }}
         </p>
       </div>
       <div class="cont2">
@@ -128,7 +113,6 @@
             </li>
             @endforeach
           @endif
-        </ul>
         </ul>
       </div>
     </div>

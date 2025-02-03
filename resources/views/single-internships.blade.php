@@ -58,7 +58,7 @@
   <div class="modal-content">
     <span class="close-modal-btn">&times;</span>
     <h3 class="uppercase">Submit Your Application</h3>
-    @php echo do_shortcode('[contact-form-7 id="f03a231" title="Job application and resume submition"]'); @endphp
+    @php echo do_shortcode('[contact-form-7 id="aff0bb2" title="Interns"]'); @endphp
   </div>
 </div>
 

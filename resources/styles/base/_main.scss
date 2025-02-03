@@ -220,3 +220,20 @@ h5 {
   height: 2rem;
   @apply p-3 text-primary;
 }
+
+#search-results-container {
+  @apply bg-lightgray p-4  shadow-lg;
+}
+
+#search-results {
+  @apply bg-secondary p-4  shadow-lg shadow-graybase;
+  @media (width >= 40em) {
+    @apply p-6;
+  }
+  @media (width >= 60em) {
+    @apply p-8;
+  }
+  @media (width >= 75em) {
+    @apply p-10 w-[75rem] mx-auto;
+  }
+}

@@ -6,14 +6,25 @@
         @apply p-4;
       }
       h1 {
-        @apply text-secondary;
-        span {
-          font-weight: 500;
+        .heading-1 {
+          display: inline-block;
+          width: 24rem;
+          font-weight: 400;
+          @apply text-secondary;
+          @media (width >= 60em) {
+            width: 37.5rem;
+          }
+        }
+        .heading-2 {
+          display: inline-block;
+          width: 24rem;
+          font-weight: 600;
           background: rgba($color: #FFF, $alpha: 0.3);
           @apply text-primary italic;
 
           @media (width >= 60em) {
             background: none;
+            width: 37.5rem;
           }
         }
       }
