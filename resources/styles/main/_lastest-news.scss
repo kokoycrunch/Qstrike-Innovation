@@ -1,0 +1,145 @@
+.latest-news-post {
+  h4 {
+      font-weight: 600;
+    }
+  //HERO
+  .hero {
+    @apply bg-primary text-secondary p-4;
+    .image-container {
+      width: 100%;
+      height: auto;
+    }
+    .wrapper {
+      display: block;
+      margin-inline: auto;
+      @media (width >= 75em) {
+        width: 75rem;
+      }
+    }
+    h1 {
+      @apply text-secondary;
+      @media (width >= 60em) {
+        @apply pt-0
+      }
+    }
+    span {
+      font-weight: 400;
+      @apply text-secondary italic;
+    }
+    p {
+      @apply pt-4;
+      text-align: justify;
+      width: 100%;
+      @media (width >= 60em) {
+        @apply  py-6;
+      }
+    }
+    .link-to-post {
+      @apply border-2 border-secondary px-3 py-2;
+    }
+    .latest-post {
+      @apply py-4;
+      display: block;
+      margin-inline: auto;
+
+      .latest-post-container {
+        @apply border-2 border-secondary p-4;
+        @media (width >= 60em ) {
+          @apply p-6
+        }
+        @media (width >= 75em ) {
+          @apply p-10
+        }
+      }
+
+      @media (width >= 75em ) {
+        width: 75rem;
+      }
+      p {
+        @apply py-6;
+        @media (width >= 60em) {
+          @apply py-0 pb-6;
+        }
+      }
+      .news-content {
+        @apply flex flex-col mt-4;
+        @media (width >= 60em) {
+          @apply flex-row-reverse  gap-6;
+        }
+        .panel-1, .panel-2 {
+          @apply w-full
+        }
+      }
+    }
+  }
+  //Blog list
+  .latest-news-list {
+    @apply bg-lightgray w-full p-4;
+
+    .wrapper {
+      display: block;
+      margin-inline: auto;
+      @apply grid grid-cols-1;
+
+      @media (width >= 75em) {
+        width: 75rem;
+      }
+      h3 {
+        @apply py-6 uppercase;
+      }
+      hr {
+        @apply border-primary
+      }
+      &__cont1{
+        margin-bottom: 1rem;
+        @apply col-span-1 grid grid-cols-1 border-b border-primary;
+
+        @media (width >= 40em) {
+          @apply grid-cols-10;
+        }
+        .img-cont{
+          @apply col-span-1 flex justify-start p-4;
+
+          @media (width >= 40em) {
+            @apply col-span-3 flex justify-start;
+          }
+
+          img {
+            width: auto;
+            height: auto;
+
+            @media (width >= 40em) {
+              width: 18.75rem;
+            }
+          }
+        }
+        .text-cont {
+          @apply col-span-1 p-4;
+
+          @media (width >= 40em) {
+            @apply col-span-7;
+          }
+        }
+      }
+      .pagination {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 1rem;
+      }
+
+      .pagination a,
+      .pagination span {
+        padding: .125rem .5rem .125rem .5rem;
+        margin: 0 5px;
+        border-radius: 50%;
+        text-decoration: none;
+      }
+
+      .pagination .current {
+        @apply text-graybase;
+      }
+
+    }
+  }
+}
+

@@ -33,9 +33,9 @@
   <div class="hero" style="background-image: url('{{ $career_bg_url }}'); background-size: contain; background-repeat: no-repeat; background-position: left;">
     <div class="bg-qstrike" style="background-image: url('{{ $careerhero_bg_url }}'); background-size: contain; background-repeat: no-repeat; background-position: right;" data-aos="fade-left" data-aos-delay="10">
         <div class="hero__cont">
-          <h1 data-aos="fade-right" data-aos-delay="200">build your<br/> career with<br/> <span>qstrike<br/> innovations</span></h1>
-          <p data-aos="fade-up" data-aos-delay="200">Explore new possibilities with a team that fosters creativity,
-            collaboration, and growth every step of the way.
+          <h1 data-aos="fade-right" data-aos-delay="200" ><span class="heading-1">{{$careersHeroHeading1}}</span><br/> <span class="heading-2">{{$careersHeroHeading2}}</span></h1>
+          <p data-aos="fade-up" data-aos-delay="200">
+            {{$careersSubheading}}
           </p>
         </div>
     </div>
@@ -43,7 +43,7 @@
   {{-- Job-list --}}
   <div class="job-list">
     <div class="wrapper">
-      <h2 data-aos="fade-down" data-aos-delay="200">be part of our <strong>team!</strong></h2>
+      <h2 data-aos="fade-down" data-aos-delay="200">{{$openPositionHeading}}</h2>
       {{-- Regular position --}}
       <div class="accordion2">
         <div class="accordion-item2">
@@ -142,13 +142,13 @@
   {{-- Why Qstrike --}}
   <div class="why-qstrike">
     <div class="wrapper">
-      <h2 data-aos="fade-right" data-aos-delay="200">Why <span>Qstrike Innovations?</span></h2>
+      <h2 data-aos="fade-right" data-aos-delay="200"><span>{{ $whyQstrike }}</span></h2>
       <ul>
-          @if ($whyQstrike)
-              @foreach ($whyQstrike as $item)
+          @if ($whyQstrikeInnovations)
+              @foreach ($whyQstrikeInnovations as $item)
               <li data-aos="fade-up" data-aos-delay="200">
                 <i class="fi fi-rs-shield-trust bullet-icon"></i>
-                  <h4>{{ $item['why'] }}   –
+                  <h4>{{ $item['title'] }}   –
                     <span>
                       {{ $item['description'] }}
                     </span>

@@ -44,9 +44,6 @@ footer {
         }
       }
       .footer-menu {
-        ul {
-          @apply border-b-2 border-darkgray pb-3;
-        }
         li {
         font-family: "Roboto Condensed", sans-serif;
         @apply py-1 uppercase;

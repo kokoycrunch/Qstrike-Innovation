@@ -1,0 +1,225 @@
+.latest-news-page {
+  @apply p-4 bg-lightgray;
+  h3 {
+    font-family: "Roboto", sans-serif;
+    font-weight: 500;
+  }
+  h5 {
+    font-family: "Roboto", sans-serif;
+    font-weight: 500;
+  }
+
+  &__wrapper {
+    button {
+      width: 100%;
+      padding: 0.25rem 1rem 0.25rem 1rem;
+      border-radius: 6.25rem;
+      @apply my-4 text-secondary bg-primary;
+
+      @media (width >= 75rem) {
+        display: none;
+      }
+    }
+    @media ( width >= 75rem) {
+      @apply py-[4.375rem];
+      display: block;
+      margin-inline: auto;
+      width: 75rem;
+    }
+  }
+
+  //Job Title
+  .title {
+    display: block;
+    margin-inline: auto;
+    @apply border-b-[1px] border-primary pb-4;
+
+    &__cont {
+      @apply flex flex-col;
+
+      @media (width >= 75rem) {
+        @apply flex flex-row w-full justify-between;
+      }
+      button {
+        display: none;
+        width: max-content;
+        padding: 0.25rem 1rem 0.25rem 1rem;
+        border-radius: 6.25rem;
+        @apply mt-2 text-secondary bg-primary;
+
+        @media (width >= 75rem) {
+          display: inline-block;
+          height: max-content;
+          padding: 0.25rem 3rem 0.25rem 3rem;
+        }
+      }
+      .tag {
+        width: max-content;
+        font-weight: 100;
+        padding: 0.25rem 1rem 0.25rem 1rem;
+        border-radius: 6.25rem;
+        @apply mt-2 border border-primary bg-secondary text-xs;
+      }
+    }
+  }
+  //Job Description
+  .content {
+    @apply py-4;
+    ul {
+      @apply pl-6 mt-4 flex flex-col gap-2 list-disc;
+
+      @media (width >= 75rem) {
+        width: 46.875rem;
+      }
+    }
+    ol {
+      @apply pl-6 mt-4 flex flex-col gap-2 list-decimal;
+
+      @media (width >= 75rem) {
+        width: 46.875rem;
+      }
+    }
+    .featured-image{
+     display: flex;
+     justify-content: center;
+     padding-bottom: 1rem;
+    }
+    hr {
+     @apply border-primary;
+    }
+    .news-content {
+      @apply pt-5;
+
+      b strong {
+        font-weight: 500;
+      }
+      // Reset any inherited styles
+      ul, ol {
+        list-style-position: outside;
+        margin: 1em 0;
+        padding-left: 2em;
+      }
+
+      ul {
+        list-style-type: disc;
+      }
+
+      ol {
+        list-style-type: decimal;
+      }
+
+      li {
+        margin-bottom: 0.5em;
+      }
+
+      p {
+        margin: 1em 0;
+        line-height: 1.6;
+      }
+
+      h1, h2, h3, h4, h5, h6 {
+        margin: 1.5em 0 0.5em;
+        line-height: 1.2;
+      }
+
+      // Add proper spacing for block elements
+      blockquote {
+        margin: 1.5em 0;
+        padding: 1em;
+        border-left: 4px solid #ddd;
+      }
+
+      // Ensure images are responsive
+      img {
+        max-width: 100%;
+        height: auto;
+        &[align="right"] {
+          float: right;
+          margin: 0 0 1em 1em;
+        }
+
+        &[align="left"] {
+          float: left;
+          margin: 0 1em 1em 0;
+        }
+
+        &[align="center"] {
+          display: block;
+          margin-left: auto;
+          margin-right: auto;
+        }
+      }
+      // Clear floats if needed
+      &::after {
+        content: "";
+        clear: both;
+        display: table;
+      }
+
+      .alignright {
+        float: right;
+        margin: 0 0 1em 1em;
+      }
+
+      .alignleft {
+        float: left;
+        margin: 0 1em 1em 0;
+      }
+
+      .aligncenter {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+    }
+  }
+  .breadcrumb {
+    margin-bottom: 20px;
+  }
+
+  .breadcrumb .separator {
+    margin: 0 10px;
+    color: #666;
+  }
+
+  .breadcrumb .current {
+    color: #666;
+  }
+
+  .breadcrumb a {
+    text-decoration: none;
+  }
+
+  .breadcrumb a:hover {
+    text-decoration: underline;
+  }
+  .post-navigation {
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 1px solid #eee;
+  }
+
+  .post-navigation__links {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+
+  .post-navigation__previous,
+  .post-navigation__next {
+    flex: 1;
+  }
+
+  .post-navigation__next {
+    text-align: right;
+  }
+
+  .nav-subtitle {
+    display: block;
+    font-size: 0.875rem;
+    color: #666;
+    margin-bottom: 0.5rem;
+  }
+}
+

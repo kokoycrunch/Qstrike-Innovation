@@ -28,7 +28,17 @@
     }
     &__cont2{
       @apply p-4 flex flex-col gap-4;
-      blockquote b {
+      blockquote p {
+        font-family: Roboto;
+        font-size: 1.375rem;
+        font-size: clamp(1.375rem, 1.3329796264855687rem + 3.0560271646859083vw, 3.625rem);
+        font-style: italic;
+        font-weight: 300;
+        line-height: normal;
+        letter-spacing: -1px;
+        max-width: 75rem;
+      }
+      blockquote p strong, blockquote p b {
         font-weight: 500;
       }
       @media (width >= 75em){
@@ -36,7 +46,7 @@
         margin-inline: auto;
         max-width: 75rem;
         @apply px-0 pt-8;
-        blockquote {
+        blockquote p{
           @apply py-14
         }
       }
@@ -105,7 +115,7 @@
           @apply py-12;
         }
         @media (width >= 75em) {
-          @apply py-20;
+          @apply py-16;
         }
       }
       @media (width >= 40em) {

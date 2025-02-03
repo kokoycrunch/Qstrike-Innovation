@@ -301,10 +301,10 @@
             }
           }
           ul li{
-            @apply flex items-center border-b text-secondary border-secondary py-2 gap-10 uppercase;
+            @apply flex items-center border-b text-secondary border-secondary p-2 gap-10 uppercase;
 
             @media (width >= 40em) {
-              @apply py-4;
+              @apply p-4;
             }
           }
           li:hover {
