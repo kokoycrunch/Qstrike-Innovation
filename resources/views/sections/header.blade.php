@@ -11,6 +11,7 @@
         {!! wp_nav_menu(['theme_location' => 'primary_navigation', 'menu_class' => 'nav', 'echo' => false]) !!}
         @endif
     </nav>
+    {{-- <span id="hrislogin"><a href="https://employeeportal.qstrike.net/nova/login" target="_blank">HRIS LOGIN</a></span> --}}
 
       <div class="menu-icon">
         <i class="fi fi-br-menu-burger" onclick="toggleMenu()"></i>

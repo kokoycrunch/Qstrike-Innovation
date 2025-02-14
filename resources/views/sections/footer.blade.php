@@ -9,8 +9,8 @@
         <h3 class="text-darkgray md:w-[12.50rem] pb-4"> BE THE <span class="italic text-primary"><strong>GAME CHANGER</strong></span></h3>
         <hr class="border-darkgray">
         <ul class="contact-info">
-          <li><span class="dashicons dashicons-email"></span>support@qstrikeinnovation.com</li>
-          <li><span class="dashicons dashicons-phone"></span></span>+228 872 7777</li>
+          <li><span class="dashicons dashicons-email"></span>hrdepartment@qstrike.com</li>
+          <li><span class="dashicons dashicons-phone"></span>045 6461413</li>
           <li><span class="dashicons dashicons-location"></span>2F Alson Sportswear Inc Bldg Old
             Road Mcarthur Hway Telabastagan</li>
         </ul>
@@ -19,9 +19,17 @@
     <div class="list-cont">
       <h5>SOCIAL MEDIA</h5>
       <ul class="flex gap-3">
-        <li><img src="http://qstrikeinov.test/wp-content/uploads/2024/11/Facebook.png" alt=""></li>
-        <li><img src="http://qstrikeinov.test/wp-content/uploads/2024/11/Instagram.png" alt=""></li>
-        <li><img src="http://qstrikeinov.test/wp-content/uploads/2024/11/LinkedIn.png" alt=""></li>
+        @if ($socialMediaIcons)
+        @foreach ($socialMediaIcons as $socmedicons)
+        <li>
+            {{-- Display the flag image --}}
+            @if ($socmedicons['social_media_icons'])
+              <a href="{{ $socmedicons['link'] }}">{!! wp_get_attachment_image($socmedicons['social_media_icons'], 'full') !!}</a>
+            @endif
+            {{-- Display the country name --}}
+        </li>
+        @endforeach
+        @endif
       </ul>
     </div>
     <div class="list-cont">
@@ -35,4 +43,6 @@
     </div>
   </div>
   <p class="text-center py-10">© 2024. ALL RIGHTS RESERVED QUICKSTRIKE MANUFACTURING</p>
+  <p>Max Input Vars: {{ ini_get('max_input_vars') }}</p>
+
 </footer>
