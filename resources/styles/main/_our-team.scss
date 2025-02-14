@@ -7,13 +7,13 @@
       @apply flex justify-center;
       div {
         position: absolute;
-        border-bottom: 3.125rem solid #EEEEEE;
-        border-left: 100vw solid transparent;
+        // border-bottom: 3.125rem solid #EEEEEE;
+        // border-left: 100vw solid transparent;
         bottom: 0;
       }
       h1 {
         position: relative;
-        @apply pt-10 pb-20 px-4 text-darkgray w-full;
+        @apply pt-10 pb-20 px-4 text-secondary w-full;
 
         @media (width >= 75em){
           max-width: 75rem;

@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function toggleMenu() {
     if (menuList.style.maxHeight === '0rem') {
-      menuList.style.maxHeight = '18.75rem';
+      menuList.style.maxHeight = '25rem';
     } else {
       menuList.style.maxHeight = '0rem';
     }
@@ -34,6 +34,24 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
+  function styleHRISLogin() {
+    const menuLinks = document.querySelectorAll(".nav-primary a");
+
+    menuLinks.forEach(link => {
+      if (link.textContent.trim() === "HRIS LOGIN") {
+        link.style.backgroundColor = "black";
+        link.style.color = "white";
+        link.style.padding = "8px 12px"; // py-2 px-3 equivalent
+        link.style.textDecoration = "none";
+        link.style.borderRadius = "4px"; // Optional
+
+        // Make the link open in a new tab
+        link.setAttribute("target", "_blank");
+        link.setAttribute("rel", "noopener noreferrer");
+      }
+    });
+  }
+
   menuIcon.addEventListener('click', toggleMenu);
   window.addEventListener('resize', resetMenuOnResize);
   window.addEventListener('scroll', handleScroll);
@@ -41,4 +59,5 @@ document.addEventListener('DOMContentLoaded', () => {
   // Initialize on load
   resetMenuOnResize();
   handleScroll();
+  styleHRISLogin(); // Apply styles to HRIS LOGIN button
 });

@@ -16,18 +16,13 @@
       <div></div>
       <h1 data-aos="fade-right" data-aos-delay="200">{{ $ourTeamHeader1 }} <b>{{ $ourTeamHeader2 }}</b></h1>
     </div>
-    <div class="hero__cont2">
-      <p data-aos="fade-down" data-aos-delay="200">{{ $ourTeamSubheadline }}</p>
-      <blockquote data-aos="fade-left" data-aos-delay="200" >
-        {!! $ourTeamSubheadlineEmphasized !!}
-      </blockquote>
-    </div>
+
   </div>
   {{-- Company Core Values --}}
   <div class="core-values">
     <div class="wrapper">
           <div class="core-values__cont1">
-            <h2 class="text-secondary" data-aos="fade-right" data-aos-delay="200">{{ $coreValuesHeading }}</h2>
+            <h2 class="text-secondary">{{ $coreValuesHeading }}</h2>
           </div>
           <div class="core-values__cont2">
             <div class="accordion">
@@ -54,12 +49,11 @@
   {{-- Behind qstrike --}}
   <div class="qstrike-people">
       <div class="wrapper">
-            <h2 data-aos="fade-right" data-aos-delay="200"> {{$behindQstrikeHeading1}} <span class="text-primary">{{$behindQstrikeHeading2}}</span></h2>
-            <p class="subheading" data-aos="fade-up" data-aos-delay="200">
+            <h2> {{$behindQstrikeHeading1}} <span class="text-primary">{{$behindQstrikeHeading2}}</span></h2>
+            <p class="subheading">
               {{$behindQstrikeSubheading}}
             </p>
-            {{-- C-Suite --}}
-            <div data-aos="fade-left" data-aos-delay="200">
+            <div>
               <hr>
             </div>
             <div class="qstrike-faces">
@@ -70,7 +64,7 @@
                       $main_image_url = wp_get_attachment_image_url(get_sub_field('main_image'), 'full');
                       $hover_image_url = wp_get_attachment_image_url(get_sub_field('hover_image'), 'full') ?: $main_image_url; // Fallback to main image if no hover image
                   @endphp
-                      <div data-aos="fade-up" data-aos-delay="200">
+                      <div>
                           <div class="employee-card col-span-1" data-hover-image="{{ $hover_image_url }}">
                             <img src="{{ $main_image_url }}" alt="{{ get_sub_field('full_name') }}'s Image" class="employee-image" loading="lazy">
                           </div>

@@ -40,9 +40,9 @@ class QstrikeInnovations extends Field
             'label' => 'Hero logo',
             'return_format' => 'id',  // returns the image ID
         ])
-        //trusted brands
-        ->addImage('trusted_brands', [
-            'label' => 'brands',
+        //About our company
+        ->addImage('about_our_company', [
+            'label' => 'About our company',
             'return_format' => 'id',  // returns the image ID
         ])
         //Hero Video
@@ -51,17 +51,23 @@ class QstrikeInnovations extends Field
             'return_format' => 'id', // Returns the attachment ID
             'mime_types' => 'mp4,webm,ogv', // Restrict file types
         ])
-        //Partner factories
-        ->addRepeater('partner_factories', [
-            'label' => 'Partner Factories',
+        //History Video
+        ->addFile('history_video', [
+            'label' => 'History Video',
+            'return_format' => 'id', // Returns the attachment ID
+            'mime_types' => 'mp4,webm,ogv', // Restrict file types
+        ])
+        //Social Media
+        ->addRepeater('social_media', [
+            'label' => 'Social Media',
             'layout' => 'table',
         ])
-            ->addImage('flag', [
-                'label' => 'flag',
+            ->addImage('social_media_icons', [
+                'label' => 'Social Media Icons',
                 'return_format' => 'id',  // returns the image ID
             ])
-            ->addText('country', [
-                'label' => 'Country',
+            ->addText('link', [
+                'label' => 'Link',
             ])
         ->endRepeater();
 

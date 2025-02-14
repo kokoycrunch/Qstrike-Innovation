@@ -40,7 +40,7 @@
       </div>
       @php wp_reset_postdata() @endphp
     @else
-      <h1>No Posts Available</h1>
+      <h2 class="text-center">No Posts Available</h2>
     @endif
   </div>
 
