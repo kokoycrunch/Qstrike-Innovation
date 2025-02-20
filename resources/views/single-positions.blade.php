@@ -1,8 +1,6 @@
 @extends('layouts.app')
-
 @section('content')
 <div class="positions">
-
   <div class="positions__wrapper">
       {{-- Job title --}}
       <div class="job-title">
@@ -16,71 +14,25 @@
       </div>
       {{-- Job description --}}
       <div class="job-description">
-        {{-- <h5>Responsibilities:</h5>
-          @if ($responsibilities)
-          @foreach ($responsibilities as $item)
-          <ul>
-            <li>{{$item['description']}}</li>
-          </ul>
-          @endforeach
-          @else
-          <li>No responsibilities listed.</li>
-        @endif
-
-        <h5 class="mt-6">Requirements:</h5>
-          @if ($requirements)
-          @foreach ($requirements as $item)
-          <ul>
-            <li>{{$item['description']}}</li>
-          </ul>
-          @endforeach
-          @else
-            <li>No responsibilities listed.</li>
-          @endif --}}
           <div class="post-content">
             {!! the_content() !!}
           </div>
       </div>
-
       <button class="open-modal-btn">SUBMIT APPLICATION</button>
-
   </div>
-
-
-
 </div>
-
-
-
 {{-- Modal --}}
 <div class="modal hidden" id="application-modal">
   <div class="modal-overlay"></div>
   <div class="modal-content">
     <span class="close-modal-btn">&times;</span>
-    <h3 class="uppercase">Submit Your Application</h3>
-    @php echo do_shortcode('[contact-form-7 id="f03a231" title="Job application and resume submition"]'); @endphp
+    <h3 class="uppercase">Submit Your Application </h3>
+    </br>
+    <p>for <i><b>{{ $positionTitle ?: get_the_title() }}</b></i> position</p>
+  <hr>
+    @php
+      echo do_shortcode('[contact-form-7 id="f03a231" title="Job application and resume submission"]');
+    @endphp
   </div>
 </div>
-
 @endsection
-{{--
-Form static --}}
-{{-- <form>
-  <div>
-    <label for="name">Name:</label>
-    <input type="text" id="name" name="name" required>
-  </div>
-  <div>
-    <label for="email">Email:</label>
-    <input type="email" id="email" name="email" required>
-  </div>
-  <div>
-    <label for="message">Message:</label>
-    <textarea id="message" name="message" required></textarea>
-  </div>
-  <div>
-    <label for="upload">Upload Resume:</label>
-    <input type="file" id="upload" name="upload" accept=".pdf,.doc,.docx" required>
-  </div>
-  <button type="submit">Submit</button>
-</form> --}}
