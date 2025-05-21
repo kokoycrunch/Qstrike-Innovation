@@ -26,6 +26,7 @@
     "@roots/sage": "6.24.0"
   },
   "dependencies": {
-    "body-scroll-lock-upgrade": "^1.1.0"
+    "body-scroll-lock-upgrade": "^1.1.0",
+    "debug": "^4.3.4"
   }
 }

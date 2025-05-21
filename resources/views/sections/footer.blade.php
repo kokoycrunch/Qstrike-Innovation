@@ -42,7 +42,7 @@
 
     </div>
   </div>
-  <p class="text-center py-10">© 2024. ALL RIGHTS RESERVED QUICKSTRIKE MANUFACTURING</p>
+  <p class="text-center py-10">© 2025. ALL RIGHTS RESERVED QUICKSTRIKE MANUFACTURING</p>
   <p>Max Input Vars: {{ ini_get('max_input_vars') }}</p>
 
 </footer>
