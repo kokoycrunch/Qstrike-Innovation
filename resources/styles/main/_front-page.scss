@@ -1,209 +1,206 @@
 .front-page {
-
+  p{
+    @apply text-darkgray;
+  }
+  h1, h2, h3, h4, h5, h6{
+    @apply text-primary;
+  }
   //Hero
   .hero {
-    position: relative;
-    background-repeat: no-repeat;
-    background-size: cover;
-    @apply flex flex-col justify-center ;
+    background: #EEEEEE;
+    background: linear-gradient(90deg,rgba(238, 238, 238, 1) 0%, rgba(26, 28, 30, 0.15) 100%);
+    width: 100%;
+    @apply flex justify-center px-10;
 
+    .herocont {
+      @apply flex;
+      margin-inline: auto;
+      max-width: 1440px;
+      height: 100vh;
 
-    .background-video {
-      position: relative;
-      display: none;
-      @apply bg-primary;
-
-
-      @media (width >= 40em) {
-        display: block;
+      @media (width < 1440px) {
+        height: auto;
       }
-      video {
-        object-fit: cover;
-        width: 100%;
-        height: 100%; // Full container height
-
-        @media (width >= 75em) {
-          object-fit: contain;
-          object-position: right;
-          max-height: 800px;
-        }
-        @media (width > 120em) {
-          object-position: center;
-        }
-      }
-    }
-
-    &__cont {
-      position: relative;
-      width: 100%;
-      height: 12.5rem;
-      @apply grid grid-cols-1;
-
-      @media (width < 40em) {
-        height: 14.625rem;
+      @media (width < 769px) {
+        @apply pt-10;
+        flex-direction: column;
       }
 
-      @media (width >= 40em) {
-        position: absolute;
-        top: 0;
-        left: 0;
-        height: auto; // JavaScript will handle the height
-        @apply grid-cols-2;
-      }
-      @media (width >= 75rem) {
-        @apply grid-cols-5;
-      }
-
-      .cont1 {
-        @apply col-span-1 text-darkgray p-4;
-
-        @media (width >= 75rem) {
-        @apply col-span-2;
-        }
-      }
-
-      .cont2 {
-        position: relative;
-        display: none;
-        border-left: 8rem solid rgba(0, 0, 0, 1.0);
-        border-bottom: 0 solid transparent; // JavaScript will adjust the border
-        @apply col-span-1;
-
-        @media (width >= 40em) {
-          display: block;
-        }
-
-        @media (width >= 75rem) {
-          @apply col-span-3;
+        &__text {
+          @apply flex flex-col justify-center flex-1;
+          gap: 2rem;
+          @media (width >= 75rem) {
+            height: 80%;
           }
-      }
-    }
-    .hero-text {
-      position: absolute;
-      margin-left: auto;
-      margin-right: auto;
-      left: 0;
-      right: 0;
-      @apply p-4;
-
-      @media (width >= 75em) {
-        width: 75rem;
-        top: 6.25rem;
-        @apply p-0;
-      }
-
-      @media (width > 125em) {
-        width: 125rem;
-        top: 6.25rem;
-        @apply p-0;
-      }
-
-
-      h1 {
-        @apply text-darkgray;
-        @media (width >= 40em) {
-          width:40%;
         }
-        @media (width >= 60em) {
-          width: 30rem;
+        &__carousel {
+          height: 100%;
+          @apply flex justify-center items-center flex-1;
         }
-      }
-      span {
-        font-weight: 500;
-        @apply text-secondary italic;
-      }
-      p {
-        @apply pt-4 text-secondary;
-
-        @media (width >= 40em) {
-          width:40%;
-        }
-        @media (width >= 75em) {
-          width:35%;
-          @apply pt-[6.25rem];
-        }
-      }
     }
   }
 
 
 //About our company
   .about {
-      @apply flex justify-center;
-      &__cont {
-      @apply grid grid-cols-1;
+   @apply flex justify-center px-4;
+    margin-inline: auto;
 
-      @media (width >= 40em) {
-        @apply grid-cols-2 p-4;
+    .about_wrapper {
+      @apply flex justify-end;
+      max-width: 1440px;
+      border-left: solid 1px;
+      border-color: rgba(26, 28, 30, 0.25);
+      padding: 124px 0 180px 0;
 
-        img {
-          width: 100%;
-          @media (width >= 40em) {
-            height: auto;
-            max-width: 37.5rem;
-          }
+      @media (width < 769px) {
+        padding: 64px 0 32px 0;
+      }
+    }
+    .about_wrapper2 {
+      @apply flex;
+      max-width: 1440px;
+      border-right: solid 1px;
+      border-color: rgba(26, 28, 30, 0.25);
+      padding: 124px 0 180px 0;
+
+      @media (width < 769px) {
+        padding: 64px 0 32px 0;
+        border-right: none;
+      }
+    }
+    .about__cont {
+        @apply flex flex-col w-[80%];
+        gap: 2rem;
+
+        @media (width < 769px) {
+          @apply w-auto pl-5 py-10;
         }
       }
-      @media (width >= 60em) {
-        width: 75rem;;
-        @apply grid-cols-2 p-4;
-      }
-      @media (width >= 75em) {
-        width: 75rem;;
-        @apply grid-cols-2 p-0;
-      }
-      div {
-        @apply col-span-1 p-4;
+    .about__cont2 {
+        @apply flex flex-col w-[80%];
+        gap: 2rem;
 
-        @media (width >= 40em) {
-          @apply p-4;
-        }
-
-        @media (width >= 60em) {
-          @apply py-16 px-0;
-        }
-
-        p {
-          @apply pt-2;
-          @media (width >= 40em) {
-            width: 80%;
-            padding-top: 2rem;
-          }
+        @media (width < 769px) {
+          @apply w-auto;
         }
       }
     }
+    //mission vision
+    .mission-vision {
+      @apply flex flex-col bg-primary;
+      width: 100%;
 
+      .our-mission {
+        @apply flex justify-between;
+        margin-inline: auto;
+        max-width: 1440px;
+
+        @media (width < 769px) {
+          @apply flex-col;
+        }
+
+        .our-mission-image {
+          @apply flex-1;
+          max-height: 500px;
+        }
+        .our-mission-text {
+          @apply flex flex-col flex-1 justify-center;
+          h3, p{
+            @apply text-secondary;
+          }
+          .description {
+            @apply text-secondary;
+            font-family: Outfit;
+            font-size: 23px;
+            font-style: normal;
+            font-weight: 300;
+            line-height: normal;
+          }
+          div {
+            @apply flex flex-col gap-5 p-10;
+          }
+        }
+      }
+      .our-mission-reverse {
+        @media (width < 769px) {
+          @apply flex flex-col-reverse;
+        }
+      }
     }
+    //Core Values
+    .core-values {
+      background: #EEEEEE;
+      background: radial-gradient(circle, rgba(238, 238, 238, 1) 0%, rgba(26, 28, 30, 0.03) 100%);
+      padding-bottom: 224px;
 
-    //History
+      @media (width < 75rem ) {
+          padding-bottom: 124px;
+        }
+      @media (width < 60rem ) {
+          padding-bottom: 96px;
+        }
+
+       h2 {
+        @apply text-center pt-[124px] pb-[48px];
+
+          @media (width < 75rem ) {
+            @apply pt-[96px] pb-[32px];
+          }
+          @media (width < 60rem ) {
+            @apply pt-[40px] pb-[24px];
+          }
+       }
+      .core-values-container {
+        display: grid;
+        grid-template-columns: repeat(2, auto);
+        gap: 16px;
+        max-width: 1440px;
+        margin-inline: auto;
+        padding: 0 16px 0 16px;
+
+        @media (width < 769px) {
+          grid-template-columns: repeat(1, auto);
+        }
+
+        .core-values-item {
+          border-radius: 16px;
+          background: linear-gradient(0deg, #FFF 0%, #FFF 100%), #FFF;
+          box-shadow: 0px 100px 80px 0px rgba(0, 0, 0, 0.07), 0px 30.147px 24.118px 0px rgba(0, 0, 0, 0.05), 0px 12.522px 10.017px 0px rgba(0, 0, 0, 0.04), 0px 4.529px 3.623px 0px rgba(0, 0, 0, 0.02);
+          padding:  16px;
+          box-sizing: border-box;
+
+          // Force uniform height across all items
+          display: flex;
+          gap: 4px;
+          flex-direction: column;
+          min-height: 350px;
+        }
+      }
+    }
+        //History
     .history {
-      @apply flex flex-col  text-white bg-primary;
+      @apply flex flex-col justify-between;
+      width: 100%;
 
       &__cont1 {
-        @apply p-4;
-        @media (width >= 75em){
-          @apply w-[75rem] pb-[3.125rem];
-          display: block;
-          margin-inline: auto;
-        }
-        h2 {
-          @media (width >= 75em){
-            @apply text-center pt-[3.25rem];
-          }
-        }
-        p{
-          @apply pt-4;
-          @media (width >= 75em){
-            @apply text-center pt-[3.25rem];
-          }
+        @apply flex flex-col pt-[128px];
+        gap: 1rem;
+        margin-inline: auto;
+        max-width: 1440px;
+        border-right: solid 1px;
+        border-color: rgba(26, 28, 30, 0.25);
+
+        p {
+          width: 85%;
+          padding-bottom: 72px;
         }
       }
       &__cont2 {
-        @media (width >= 75em){
-          @apply w-[75rem];
-          display: block;
-          margin-inline: auto;
-        }
+        @apply flex justify-end pb-[64px];
+        gap: 1rem;
+        margin-inline: auto;
+        max-width: 1440px;
       }
       &__cont3 {
         @apply px-4 pt-4 pb-8;
@@ -234,23 +231,23 @@
         }
       }
       .video-container {
-        position: relative;
         width: 100%;
-        max-width: 75rem;
-        margin: auto;
-        overflow: hidden;
+
+        @media (width < 769px) {
+        @apply px-4;
+
+        }
       }
 
       .video-bg {
         width: 100%;
         display: block;
-        border-radius: 8px;
       }
 
       /* Initially hidden controls */
       .video-controls {
-        position: absolute;
-        bottom: 10px;
+        position: relative;
+        bottom: 0px;
         left: 0;
         right: 0;
         display: flex;
@@ -258,7 +255,6 @@
         justify-content: space-between;
         background: rgba(0, 0, 0, 0.7);
         padding: 8px;
-        border-radius: 0 0 8px 8px;
         opacity: 0;
         transition: opacity 0.3s ease-in-out;
       }
@@ -288,97 +284,8 @@
       }
 
     }
-    //mission vision
-    .mission-vision {
-      @apply p-4 flex justify-center;
-      &__cont {
-        @apply w-[75rem] flex flex-col gap-4;
-        @media (width >= 60em){
-          @apply py-[3.125rem] gap-8;
-        }
-        strong {
-          @apply text-primary;
-          font-weight: 600;
-        }
-      }
-    }
-    .mission-vision2 {
-      @apply p-4 flex justify-center border-b-2 border-primary;
-      &__cont {
-        @apply w-[75rem] flex flex-col gap-4;
-        @media (width >= 60em){
-          @apply py-[3.125rem] gap-8;
-        }
-        strong {
-          @apply text-primary;
-          font-weight: 600;
-        }
-      }
-    }
-    //Trusted By
-    .trusted-by {
-      @apply flex justify-center p-4 text-secondary bg-primary;
-      &__cont {
-        p {
-          @media (width >= 60em) {
-            @apply py-[3.125rem];
-          }
-        }
-        @media (width >= 75em) {
-          @apply w-[75rem] pb-[3.125rem];
-        }
-      }
-    }
-    //Partner Factories
-    .partner-factories {
-      @apply p-4 bg-primary;
 
-      @media (width >= 40em ) {
-        @apply py-10;
-      }
-      @media (width >= 60em ) {
-        @apply py-[6.25rem];
-      }
-      &__cont {
-        display: block;
-        margin-inline: auto;
-        @apply grid grid-cols-1;
-        @media (width >= 40em) {
-          @apply grid grid-cols-2;
-        }
-        @media (width >= 75em) {
-          max-width: 75rem ;
-          @apply grid grid-cols-2;
-        }
-        .cont1{
-          .heading {
-            @media (width < 40em) {
-              width: auto;
-            }
-            @media (width >= 60em) {
-              width: 25rem;
-            }
-          }
-        }
-        .cont2 {
-          ul {
-            @apply py-6;
+    /* Slider */
 
-            @media (width >= 40em) {
-              @apply py-0;
-            }
-          }
-          ul li{
-            @apply flex items-center border-b text-secondary border-secondary p-2 gap-10 uppercase;
 
-            @media (width >= 40em) {
-              @apply p-4;
-            }
-          }
-          li:hover {
-            @apply bg-secondary text-primary;
-          }
-        }
-      }
-    }
 }

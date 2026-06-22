@@ -1,62 +1,61 @@
 .contact-us {
   //Hero
   .hero {
-    @apply bg-primary text-secondary p-4;
+    @apply text-primary py-4;
+  @media (width < 90rem) {
+    padding-inline: 1rem;
+  }
     .wrapper {
       display: block;
       margin-inline: auto;
       @media (width >= 75em) {
-        width: 75rem;
+        @apply pt-[128px];
+        max-width: 1440px;
       }
     }
-    h1 {
-      @apply text-darkgray;
-      @media (width >= 60em) {
-        @apply pt-6
-      }
-    }
-    span {
-      font-weight: 400;
-      @apply text-secondary italic;
+    h3{
+      @apply text-center;
     }
     p {
-      @apply pt-4;
-      width: 22rem;
-      @media (width >= 60em) {
-        @apply  py-6;
-      }
+      @apply pt-4 text-center;
+      display: block;
+      margin-inline: auto;
+      max-width: 622px;
     }
   }
   //Message form
   .message-form {
-    @apply p-4;
     h2 {
       font-weight: 400;
       @apply text-darkgray;
     }
+    @media (width < 90rem) {
+      padding-inline: 1rem;
+    }
     @media (width >= 75em) {
-      @apply p-0;
+      @apply pb-[64px];
     }
     .wrapper {
+      @apply bg-primary text-secondary rounded-[32px] p-6;
       display: block;
+      max-width: 720px;
       margin-inline: auto;
       @media (width >= 75em) {
-        width: 75rem;
-        @apply py-10;
+        @apply p-[64px];
       }
       &__form {
         @apply flex flex-col;
         .wpcf7-submit {
           font-weight: 400;
           width: max-content;
-          @apply py-2 px-12 text-secondary bg-primary border-none uppercase;
+          @apply py-2 px-12 text-primary bg-secondary border-none rounded-full;
         }
         form input, form textarea {
-          @apply bg-lightgray border-b-2 border-darkgray w-full my-2 p-2;
+          @apply bg-secondary border-b-2 border-darkgray w-full my-2 p-2 rounded-2xl text-primary;
         }
         input::placeholder,
         textarea::placeholder {
-          color: #000000;
+          color: #1A1C1E;
           opacity: 1;
         }
         form input:focus,
@@ -64,6 +63,11 @@
           outline: none; /* Remove default outline */
           border-color: #000000; /* Change border color to desired focus color */
           box-shadow: 0 0 5px rgba(0, 0, 0, 0.8); /* Optional: Add glow effect */
+        }
+        .wpcf7-submit {
+          @media (width < 40rem) {
+            width: 100%;
+          }
         }
       }
 
@@ -75,56 +79,22 @@
   }
   //Visit Us
   .visit-us {
-    position: relative;
-    @apply bg-primary text-secondary;
+    @apply w-full;
+
+    @media (width < 90rem) {
+      padding-inline: 1rem;
+    }
 
     .wrapper {
-      position: relative;
-      @apply grid grid-cols-1 gap-2;
+      @apply flex flex-col;
 
-      @media (width >= 40em) {
-        @apply grid grid-cols-2 gap-2;
-      }
-      @media (width >= 75em) {
-        display: block;
-        margin-inline: auto;
-        width: 75rem;
-        height: 37.5rem;
-        @apply grid grid-cols-2 gap-2;
-      }
-
-      &__cont1 {
-        @apply p-4;
-
-        @media (width >=60em) {
-          @apply pt-10;
-        }
-      }
-      &__cont2 {
-        @apply pb-4;
-        iframe {
-         min-height: 18rem;
-         width: 100%;
-
-         @media (width >= 40em) {
-          height: 20rem;
-         }
-         @media (width >= 60em) {
-          height: 24rem;
-         }
-         @media (width >= 75em) {
-          position: absolute;
-          height: 37.5rem;
-          width: 100%;
-         }
-        }
-        @media (width >=40em) {
-          @apply pb-0;
-        }
+      iframe {
+        @apply py-16;
+        height: 450px;
       }
     }
-    p {
-      width: 22rem;
+    p, h4 {
+      @apply text-center;
     }
   }
 }

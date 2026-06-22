@@ -1,7 +1,23 @@
 .our-team {
   @apply bg-secondary;
   .hero{
-
+    background: #EEEEEE;
+    background: linear-gradient(90deg,rgba(238, 238, 238, 1) 0%, rgba(26, 28, 30, 0.15) 100%);
+    background-image: url('http://qstrikeinov.test/wp-content/uploads/2025/05/Frame-38.png');
+    background-repeat: no-repeat;
+    background-position: left;
+    .hero-cont {
+      @apply flex flex-col justify-center;
+      gap: 1rem;
+      max-width: 1440px;
+      margin-inline: auto;
+      padding-inline: clamp(1rem, 0rem, .0rem);
+      height: 50vh;
+      @media (width >= 90rem) {
+        height: 800px;
+        padding-inline: 0px;
+      }
+    }
     &__cont1{
       position: relative;
       @apply flex justify-center;
@@ -80,7 +96,7 @@
   }
   //Qstrike People
   .qstrike-people {
-    @apply px-4 py-6 bg-lightgray;
+    @apply px-4 py-6 bg-secondary;
 
     .wrapper {
       h2 {
@@ -161,6 +177,7 @@
     }
 
     .employee-card img {
+      border-radius: 16px;
       object-fit: cover;
       transition: opacity 0.5s ease-in-out; /* Smooth transition when image changes */
     }

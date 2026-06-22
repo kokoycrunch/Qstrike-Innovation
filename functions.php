@@ -81,8 +81,9 @@ collect(['setup', 'filters'])
         wp_enqueue_script('burger-menu', get_template_directory_uri() . '/resources/scripts/main/navigation.js', [], null, true);
 
          // Conditionally enqueue accordion script for specific pages or posts
-        if (is_page(['home'])) {
+        if (is_front_page()) {
         wp_enqueue_script('hero-banner', get_template_directory_uri() . '/resources/scripts/main/herobanner.js', ['jquery'], null, true);
+        wp_enqueue_script('image-slider', get_template_directory_uri() . '/resources/scripts/main/imageslider.js', ['jquery'], null, true );
         }
         if (is_page(['our-team', 'careers'])) {
             wp_enqueue_script('accordion-dropdown', get_template_directory_uri() . '/resources/scripts/main/accordion.js', ['jquery'], null, true);
@@ -99,3 +100,50 @@ collect(['setup', 'filters'])
         wp_enqueue_style('dashicons');
     }
     add_action('wp_enqueue_scripts', 'enqueue_dashicons');
+
+    add_action('init', function() {
+        $log = 'Upload Max Filesize: ' . ini_get('upload_max_filesize') . PHP_EOL;
+        $log .= 'Post Max Size: ' . ini_get('post_max_size') . PHP_EOL;
+
+        file_put_contents(ABSPATH . 'php_settings_log.txt', $log, FILE_APPEND);
+    });
+
+
+    //Live search function
+
+    add_action('rest_api_init', function () {
+
+    register_rest_route('custom/v1', '/search', [
+        'methods'  => 'GET',
+        'callback' => 'custom_live_post_search',
+        'permission_callback' => '__return_true',
+    ]);
+
+    });
+
+    function custom_live_post_search($request) {
+
+    $search = sanitize_text_field($request->get_param('q'));
+
+    $query = new WP_Query([
+        'post_type'      => 'post', // POSTS ONLY
+        'posts_per_page' => 5,
+        's'              => $search,
+    ]);
+
+    $results = [];
+
+    if ($query->have_posts()) {
+        while ($query->have_posts()) {
+        $query->the_post();
+
+        $results[] = [
+            'title' => get_the_title(),
+            'link'  => get_permalink(),
+        ];
+        }
+        wp_reset_postdata();
+    }
+
+    return rest_ensure_response($results);
+    }

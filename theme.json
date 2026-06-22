@@ -1251,29 +1251,34 @@
           "slug": "rose-950"
         },
         {
-          "color": "#000000",
+          "color": "#1a1c1e",
           "name": "Primary",
           "slug": "primary"
         },
         {
-          "color": "#eeeeee",
+          "color": "#ffffff",
           "name": "Secondary",
           "slug": "secondary"
         },
         {
-          "color": "#555555",
+          "color": "rgb(26 28 30 / 75%)",
           "name": "Darkgray",
           "slug": "darkgray"
         },
         {
-          "color": "#777777",
+          "color": "rgb(26 28 30 / 50%)",
           "name": "Graybase",
           "slug": "graybase"
         },
         {
-          "color": "#bbbbbb",
+          "color": "rgb(26 28 30 / 25%)",
           "name": "Lightgray",
           "slug": "lightgray"
+        },
+        {
+          "color": "rgb(26 28 30 / 5%)",
+          "name": "Ashwhite",
+          "slug": "ashwhite"
         }
       ]
     },

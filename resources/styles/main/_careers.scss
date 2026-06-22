@@ -1,66 +1,56 @@
 .careers {
   .hero {
-    @apply bg-lightgray;
+    margin-inline: auto;
+    padding-inline: 2rem;
+    background: #EEEEEE;
+    background: linear-gradient(90deg,rgba(255, 255, 255, 1) 0%, rgba(26, 28, 30, 0.15) 100%);
+    @media (width < 40rem) {
+      padding-inline: 1rem;;
+    }
     &__cont {
-      h1, p {
-        @apply p-4;
-      }
-      h1 {
-        .heading-1 {
-          display: inline-block;
-          width: 24rem;
-          font-weight: 400;
-          @apply text-secondary;
-          @media (width >= 60em) {
-            width: 37.5rem;
-          }
-        }
-        .heading-2 {
-          display: inline-block;
-          width: 24rem;
-          font-weight: 600;
-          background: rgba($color: #FFF, $alpha: 0.3);
-          @apply text-primary italic;
-
-          @media (width >= 60em) {
-            background: none;
-            width: 37.5rem;
-          }
-        }
-      }
-      p {
-          width: 24rem;
-          background: rgba($color: #FFF, $alpha: 0.3);
-          @media (width >= 60em) {
-            width: 31.25rem;
-            background: none;
-          }
-      }
-      @media (width >= 75em) {
-        display: block;
-        margin-inline: auto;
-        max-width: 75rem;
-        height: 39.375rem;
+        @apply flex flex-row;
+        margin: 0 auto;
         padding-top: 3.125rem;
+        max-width: 1440px;
+        @media (width < 40rem) {
+          @apply flex-col;
+        }
       }
+    .bg-qstrike {
+      background-image: url('http://qstrikeinov.test/wp-content/uploads/2025/06/hr.png');
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: right;
     }
     }
     .job-list {
       @apply p-4;
       .wrapper {
-        @media (width >= 75em) {
+        @apply py-[128px];
+
+        .position-choice {
+
+          @media (width < 40rem) {
+            @apply pb-4;
+          }
+        }
+        font-weight: 600;
+        @media (width >= 75rem) {
           display: block;
           margin-inline: auto;
-          width: 75rem;
+          width: 1440px;
+        }
+        @media (width < 40rem) {
+          @apply py-10;
         }
         h2 {
           @apply text-darkgray text-center pb-4;
 
-          @media (width >= 60em) {
+          @media (width >= 60rem) {
             @apply py-6;
 
           }
-          @media (width >= 60em) {
+          @media (width >= 60rem) {
             @apply py-10;
 
           }
@@ -73,10 +63,16 @@
           @apply grid-cols-2 gap-4 pt-6;
         }
         @media (width >= 60em) {
-          @apply grid-cols-3 gap-6 pt-10;
+          @apply grid-cols-4 gap-4 pt-10;
         }
         .job-card {
           transition: transform 0.2s ease-in-out; /* Smooth transition */
+          button {
+            padding: 8px 32px;
+            border-radius: 100px;
+            background: var(--Primary-black, #1A1C1E);
+            box-shadow: 0px 100px 80px 0px rgba(30, 26, 26, 0.07), 0px 30.147px 24.118px 0px rgba(30, 26, 26, 0.05), 0px 12.522px 10.017px 0px rgba(30, 26, 26, 0.04), 0px 4.529px 3.623px 0px rgba(30, 26, 26, 0.02);
+          }
           h3 {
             font-family: "Roboto", sans-serif;
             font-weight: 500;
@@ -88,7 +84,9 @@
             @media (width >= 60em) {
             }
           }
-          @apply col-span-1 p-4 bg-lightgray grid gap-6 grid-cols-1 content-between;
+          @apply col-span-1 p-4 bg-secondary grid gap-6 grid-cols-1 content-between;
+          border-radius: 16px;
+          box-shadow: 0px 100px 80px 0px rgba(0, 0, 0, 0.07), 0px 41.778px 33.422px 0px rgba(0, 0, 0, 0.05), 0px 22.336px 17.869px 0px rgba(0, 0, 0, 0.04), 0px 12.522px 10.017px 0px rgba(0, 0, 0, 0.04), 0px 6.65px 5.32px 0px rgba(0, 0, 0, 0.03), 0px 2.767px 2.214px 0px rgba(0, 0, 0, 0.02);
         }
       }
       .job-card:hover {
@@ -101,15 +99,15 @@
       background-repeat: no-repeat;
       background-position: left;
       background-size: contain;
-      @apply bg-primary;
+      @apply bg-secondary;
       .wrapper {
-        @apply text-secondary p-4;
+        @apply text-primary text-center p-4;
 
         @media (width >= 75em) {
           display: block;
           margin-inline: auto;
-          max-width: 75rem;
-          @apply p-0 py-12;
+          max-width: 1440px;
+          @apply p-0 py-[64px];
         }
         .bullet-icon {
           font-size: 1rem;
@@ -117,17 +115,13 @@
         }
         h2 {
           font-weight: 400;
-          @apply text-darkgray italic pb-4;
+          @apply pb-4;
           span {
             font-weight: 500;
             @apply text-secondary;
           }
         }
-        ul {
-          @media (width >= 60em) {
-            @apply pt-4 flex flex-col gap-4;
-          }
-        }
+
           li {
             @apply flex gap-4;
 
@@ -142,13 +136,33 @@
               }
             }
           }
+
+        .advantage-container {
+          @apply grid grid-cols-1 gap-2 pt-4 auto-rows-fr auto-cols-fr;
+
+          @media (width >= 40em) {
+            @apply grid-cols-2 gap-4 pt-6;
+          }
+          @media (width >= 60em) {
+            @apply grid-cols-3 gap-4 pt-10;
+          }
+          .advantage-card {
+            @apply flex flex-col gap-[8px] p-[24px] bg-ashwhite rounded-[16px] items-center;
+
+            p {
+              @apply text-graybase;
+              width: 75%;
+            }
+          }
+
+        }
       }
     }
     //tags
     .location {
       width: max-content;
       font-weight: 100;
-      @apply mt-2 mb-4;
+      @apply mt-2 mb-4 text-graybase;
     }
   }
 

@@ -35,7 +35,7 @@ export default async (app) => {
   app
     .serve('http://localhost:3000')
     .proxy('http://qstrikeinov.test')
-    .watch(['resources/views', 'app']);
+    .watch(['resources/views', 'app'])
 
   /**
    * Generate WordPress `theme.json`

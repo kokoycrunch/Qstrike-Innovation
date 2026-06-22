@@ -4,11 +4,12 @@ const config = {
   theme: {
     extend: {
       colors: {
-        primary: '#000000',
-        secondary: '#EEEEEE',
-        darkgray: '#555555',
-        graybase: '#777777',
-        lightgray: '#BBBBBB',
+        primary: '#1A1C1E',
+        secondary: '#FFFFFF',
+        darkgray: 'rgb(26 28 30 / 75%)',
+        graybase: 'rgb(26 28 30 / 50%)',
+        lightgray: 'rgb(26 28 30 / 25%)',
+        ashwhite: 'rgb(26 28 30 / 5%)',
 
       }, // Extend Tailwind's default colors
     },
@@ -17,3 +18,5 @@ const config = {
 };
 
 export default config;
+
+/** #eeeeee */

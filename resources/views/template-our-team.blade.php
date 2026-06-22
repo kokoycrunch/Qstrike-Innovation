@@ -8,18 +8,23 @@
 <div class="our-team">
   {{-- Hero --}}
   <div class="hero">
-    @php
+    {{-- @php
     $ourteam_bg_id = get_field('our_teambg', 'options'); // Get the image ID
     $ourteam_bg_url = $ourteam_bg_id ? wp_get_attachment_url($ourteam_bg_id) : null; // Get the image URL
     @endphp
     <div class="hero__cont1" style="background-image: url('{{ $ourteam_bg_url }}'); background-size: cover; background-repeat: no-repeat;">
       <div></div>
       <h1 data-aos="fade-right" data-aos-delay="200">{{ $ourTeamHeader1 }} <b>{{ $ourTeamHeader2 }}</b></h1>
-    </div>
+    </div> --}}
+<div class="hero-cont">
+      <h1>{{$ourTeamHeader1}}</h1>
+      <h4 class="text-darkgray">{{$ourTeamHeader2}}</h4>
+      <p class="">{{$ourTeamSubheadline}}</p>
+</div>
 
   </div>
   {{-- Company Core Values --}}
-  <div class="core-values">
+  {{-- <div class="core-values">
     <div class="wrapper">
           <div class="core-values__cont1">
             <h2 class="text-secondary">{{ $coreValuesHeading }}</h2>
@@ -45,17 +50,14 @@
             </div>
           </div>
     </div>
-  </div>
+  </div> --}}
   {{-- Behind qstrike --}}
   <div class="qstrike-people">
       <div class="wrapper">
-            <h2> {{$behindQstrikeHeading1}} <span class="text-primary">{{$behindQstrikeHeading2}}</span></h2>
+            {{-- <h2> {{$behindQstrikeHeading1}} <span class="text-primary">{{$behindQstrikeHeading2}}</span></h2>
             <p class="subheading">
               {{$behindQstrikeSubheading}}
-            </p>
-            <div>
-              <hr>
-            </div>
+            </p> --}}
             <div class="qstrike-faces">
               <div class="qstrike-faces__cont">
                 @if (have_rows('faces_behind_qstrike', 'options'))

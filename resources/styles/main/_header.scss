@@ -1,48 +1,51 @@
 .header-cont {
-  @apply bg-secondary;
+  @apply bg-secondary px-10;
   position: sticky;
   top: 0;
   z-index: 99999; // Ensure it's above other elements
   transition: background-color 0.3s ease, opacity 0.3s ease;
 
   &.scrolled {
-    background-color: rgba(238, 238, 238, 0.9); // Light gray background with transparency
+    background-color: rgba(255, 255, 255, 0.9); // Light gray background with transparency
     backdrop-filter: blur(8px); // Apply blur effect
   }
 
   @media (width >= 60em) {
     &.scrolled {
-      background-color: rgba(238, 238, 238, 0.9); // Apply semi-transparent background
+      background-color: rgba(255, 255, 255, 0.9); // Apply semi-transparent background
       backdrop-filter: blur(8px); // Apply blur effect on scroll for larger screens
     }
+  }
+  @media (width < 60em) {
+    @apply px-0;
   }
 }
 
 .header-primary {
-  @apply px-4;
+  @apply py-[16px];
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 6rem;
   transition: transform 0.3s ease, background-color 0.3s ease, backdrop-filter 0.3s ease; // Transition for the blur effect
 
   @media (width >= 60em) {
     // Apply only on larger screens
     &.scrolled {
-      background-color: rgba(238, 238, 238, 0.9); // Light gray background with transparency
+      background-color: rgba(255, 255, 255, 0.888); // Light gray background with transparency
       backdrop-filter: blur(8px); // Apply blur effect
     }
   }
 
   @media (width >= 75em) {
-    padding: 0;
     margin-inline: auto;
-    width: 75rem;
+    max-width: 90rem;
   }
-
   img {
-    height: 60px;
+    max-height: 72px;
     width: auto;
+    @media (width <= 60em) {
+      max-height: 64px;
+    }
   }
 
   ul {
@@ -64,7 +67,7 @@
   }
 
   li {
-    font-weight: 400;
+    font-weight: 300;
     padding: 1rem;
     @apply uppercase text-center;
   }
@@ -73,6 +76,7 @@
     display: none;
 
     @media (width < 60em) {
+      @apply pr-2;
       display: block;
     }
 
@@ -84,6 +88,12 @@
 
   #menu-primary-menu {
     transition: all 0.5s;
+  }
+  button.hris {
+    padding: 8px 32px;
+    border-radius: 100px;
+    background: var(--Primary-black, #1A1C1E);
+    box-shadow: 0px 100px 80px 0px rgba(30, 26, 26, 0.07), 0px 30.147px 24.118px 0px rgba(30, 26, 26, 0.05), 0px 12.522px 10.017px 0px rgba(30, 26, 26, 0.04), 0px 4.529px 3.623px 0px rgba(30, 26, 26, 0.02);
   }
 }
 
@@ -108,8 +118,24 @@
   text-decoration: underline; /* Underline for active and current page links */
   @apply text-primary;
 }
-
-
-#hrislogin {
-  @apply py-2 px-3 bg-graybase;
+.hris {
+  @media (width < 60em) {
+    display: none;
+  }
+}
+.logo {
+    @media (width < 60em) {
+    @apply pl-2;
+  }
+}
+.search-btn {
+  @media (width < 40rem) {
+    display: none;
+  }
+}
+.mobile_menu {
+  @apply flex gap-6;
+  @media (width > 40rem) {
+    display: none;
+  }
 }

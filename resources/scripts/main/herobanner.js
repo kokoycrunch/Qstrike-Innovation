@@ -112,4 +112,5 @@ document.addEventListener("DOMContentLoaded", () => {
     historyVideo.currentTime = 0;
     historyVideo.play();
   });
+
 });

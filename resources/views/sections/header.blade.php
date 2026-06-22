@@ -11,12 +11,24 @@
         {!! wp_nav_menu(['theme_location' => 'primary_navigation', 'menu_class' => 'nav', 'echo' => false]) !!}
         @endif
     </nav>
+    <div class=" flex gap-10">
+          <button class="hris">
+            <span class=" text-secondary ">HRIS LOGIN</span>
+          </button>
+          <button class="search-btn" aria-label="Search">
+            <i class="fi fi-br-search"></i>
+          </button>
+    </div>
     {{-- <span id="hrislogin"><a href="https://employeeportal.qstrike.net/nova/login" target="_blank">HRIS LOGIN</a></span> --}}
 
-      <div class="menu-icon">
-        <i class="fi fi-br-menu-burger" onclick="toggleMenu()"></i>
-      </div>
+    <div class="mobile_menu">
+            <button class="search-btn2" aria-label="Search">
+              <i class="fi fi-br-search"></i>
+            </button>
+            <div class="menu-icon">
+              <i class="fi fi-br-menu-burger" onclick="toggleMenu()"></i>
+            </div>
+    </div>
 </div>
-
 </header>
 

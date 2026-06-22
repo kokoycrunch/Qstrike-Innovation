@@ -127,3 +127,11 @@ add_action('wp_enqueue_scripts', function () {
     // Enqueue Flat Icons via CDN
     wp_enqueue_style('flaticon-uicons', 'https://cdnjs.cloudflare.com/ajax/libs/flaticon/2.1.0/flaticon.css', [], null);
 });
+add_action('wp_enqueue_scripts', function () {
+    wp_enqueue_style(
+        'google-fonts',
+        'https://fonts.googleapis.com/css2?family=DM+Sans:wght@200;300;400;700&family=Outfit:wght@400;500;700&display=swap',
+        false,
+        null
+    );
+}, 100);
